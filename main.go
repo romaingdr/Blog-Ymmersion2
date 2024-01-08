@@ -1,18 +1,25 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 )
 
+type JsonData struct {
+	Categories []Categorie `json:"categories"`
+}
+
 type Categorie struct {
-	Name     string
-	Articles []Article
+	Name     string    `json:"name"`
+	Articles []Article `json:"articles"`
 }
 
 type Article struct {
+	Id     int    `json:"id"`
 	Titre  string `json:"titre"`
 	Image  string `json:"image"`
 	Intro  string `json:"introduction"`
@@ -33,7 +40,35 @@ func indexPage(w http.ResponseWriter, r *http.Request) {
 
 func categoriePage(w http.ResponseWriter, r *http.Request) {
 	tmpl, _ := template.ParseGlob("./templates/*.gohtml")
-	tmpl.ExecuteTemplate(w, "categorie", nil)
+
+	content, err := os.ReadFile("blog.json")
+	if err != nil {
+		fmt.Println("Erreur dans la lecture du json : ", err)
+	}
+
+	var result JsonData
+
+	err = json.Unmarshal(content, &result)
+	if err != nil {
+		fmt.Println("Erreur > ", err.Error())
+	}
+
+	var Data Categorie
+
+	switch urlStr := r.URL.RawQuery[9:]; urlStr {
+	case "esport":
+		Data = result.Categories[0]
+	case "nouveautes":
+		Data = result.Categories[1]
+	case "presentations":
+		Data = result.Categories[2]
+	default:
+		tmpl.ExecuteTemplate(w, "erreur", nil)
+	}
+
+	fmt.Println(Data)
+
+	tmpl.ExecuteTemplate(w, "categorie", Data)
 }
 
 func adminPage(w http.ResponseWriter, r *http.Request) {

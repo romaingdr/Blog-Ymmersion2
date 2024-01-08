@@ -8,6 +8,16 @@
     </head>
     <body>
     <h1>Page de catégorie</h1>
+    <div>
+        <h2 class="nom">{{.Name}}</h2>
+        {{range .Articles}}
+            <div>
+                <img src={{.Image}} alt="image de l'article">
+                <a class="titre" href="/article?id={{.Id}}">{{.Titre}}</a>
+                <h3>{{.Auteur}}</h3>
+            </div>
+        {{end}}
+    </div>
     </body>
     </html>
 {{end}}
