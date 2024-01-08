@@ -17,15 +17,15 @@
         <div class="navbar">
             <div>
                 <ul>
-                    <li><a href="index.html"><img src="/static/images/home.png" alt="" width="25px" height="25px">Accueil</a></li>
-                    <li><a href="categories.html"><img src="/static/images/dossier.png" alt="" width="25px" height="25px"> Catégories</a>
+                    <li><a href="/accueil"><img src="http://localhost:8080/static/images/home.png" alt="" width="25px" height="25px">Accueil</a></li>
+                    <li><a href="categories.html"><img src="http://localhost:8080/static/images/dossier.png" alt="" width="25px" height="25px"> Catégories</a>
                         <ul>
                             <li><a href="/categorie?categorie=nouveautes">Nouveauté</a></li>
                             <li><a href="/categorie?categorie=esport">E-Sport</a></li>
                             <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html"><img src="/static/images/lettre.png" alt="" width="25px" height="25px">Contact</a></li>
+                    <li><a href="contact.html"><img src="http://localhost:8080/static/images/plus.png" alt="" width="25px" height="25px">Créer un articles</a></li>
                 </ul>
             </div>
             <div class="recherche">
@@ -42,7 +42,17 @@
             </div>
         </div>
     </header>
-
+    <h1>10 articles aléatoires</h1>
+    <ul>
+        {{ range . }}
+        <li>
+            <a href="/article?id={{ .Id }}">
+                <h2>{{ .Titre }}</h2>
+                <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
+            </a>
+        </li>
+        {{ end }}
+    </ul>
 
 
     <footer>
