@@ -39,12 +39,12 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 
 	var Data backend.Categorie
 
-	switch urlStr := r.URL.RawQuery[9:]; urlStr {
-	case "esport":
+	switch urlStr := r.URL.RawQuery; urlStr {
+	case "categorie=esport":
 		Data = result.Categories[0]
-	case "nouveautes":
+	case "categorie=nouveautes":
 		Data = result.Categories[1]
-	case "presentations":
+	case "categorie=presentations":
 		Data = result.Categories[2]
 	default:
 		tmpl.ExecuteTemplate(w, "erreur", nil)
