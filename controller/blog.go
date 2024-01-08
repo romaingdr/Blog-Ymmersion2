@@ -19,7 +19,37 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {
-	templates.Temp.ExecuteTemplate(w, "index", nil)
+	content, err := os.ReadFile("blog.json")
+	if err != nil {
+		fmt.Println("Erreur dans la lecture du json : ", err)
+	}
+
+	var result backend.JSONData
+
+	err = json.Unmarshal(content, &result)
+	if err != nil {
+		fmt.Println("Erreur > ", err.Error())
+	}
+
+	randomArticles := getRandomArticles(result, 10)
+
+	templates.Temp.ExecuteTemplate(w, "index", randomArticles)
+}
+
+// Prends un Article au hasard
+func getRandomArticles(data backend.JSONData, count int) []backend.Article {
+	var randomArticles []backend.Article
+	rand.Seed(time.Now().UnixNano())
+
+	for i := 0; i < count && i < len(data.Categories); i++ {
+		category := data.Categories[i]
+		if len(category.Articles) > 0 {
+			randomIndex := rand.Intn(len(category.Articles))
+			randomArticles = append(randomArticles, category.Articles[randomIndex])
+		}
+	}
+
+	return randomArticles
 }
 
 func CategoriePage(w http.ResponseWriter, r *http.Request) {

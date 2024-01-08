@@ -20,13 +20,13 @@
     justify-content: space-between;
 }
 
-ul {
+header ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-ul li {
+header ul li {
     float: left;
     width: 200px;
     height: 40px;
@@ -35,7 +35,7 @@ ul li {
     font-size: 20px;
 }
 
-ul li a {
+header ul li a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     display: block;
@@ -44,21 +44,21 @@ ul li a {
     align-items: center;
 }
 
-ul li a img {
+header ul li a img {
     filter: invert(100%);
     margin-right: 5px;
 }
 
-ul li a:hover {
+header ul li a:hover {
     background-color: #646464;
     color: rgb(6, 255, 31);
 }
 
-ul li ul li {
+header ul li ul li {
     display: none;
 }
 
-ul li:hover ul li {
+header ul li:hover ul li {
     background-color: black;
     display: block;
 }
