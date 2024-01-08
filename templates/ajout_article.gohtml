@@ -8,6 +8,32 @@
     </head>
     <body>
     <h1>Ajouter un article</h1>
+    <form id="ajoute_article" action="http://localhost:8080/submit" method="POST" enctype="multipart/form-data">
+
+        <label for="categorie">Catégorie :</label><br>
+        <select id="categorie" name="categorie">
+            <option value="Nouveautés">Nouveautés</option>
+            <option value="Esport">E-sport</option>
+            <option value="Présentations">Présentation</option>
+        </select><br><br>
+
+        <label for="titre">Titre : </label><br>
+        <input type="text" id="titre" name="titre"><br><br>
+
+        <label for="intro">Introduction : </label><br>
+        <textarea id="intro" name="intro" rows="4" cols="50"></textarea><br><br>
+
+        <label for="contenu">Contenu : </label><br>
+        <textarea id="contenu" name="contenu" rows="4" cols="50"></textarea><br><br>
+
+        <label for="auteur">Auteur : </label><br>
+        <input type="text" id="auteur" name="auteur"><br><br>
+
+        <label for="image">Importer une image : </label><br>
+        <input type="file" id="image" name="image" accept="image/*"><br><br>
+
+        <input type="submit" value="Ajouter">
+    </form>
     </body>
     </html>
 {{end}}

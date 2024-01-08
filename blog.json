@@ -1,34 +1,55 @@
 {
-  "categories": {
-    "esport": [
-      {
-        "titre": "Les meilleurs moments du dernier tournoi de League of Legends",
-        "image": "lien_image.jpg",
-        "introduction": "Revivez les moments les plus intenses du tournoi avec des actions incroyables et des retournements de situation inattendus.",
-        "auteur": "Jean Dupont",
-        "date": "2023-12-20",
-        "corps": "Le dernier tournoi de League of Legends a été un spectacle à couper le souffle, avec des équipes qui ont livré des performances incroyables..."
-      }
-    ],
-    "presentations": [
-      {
-        "titre": "Découvrez le nouveau smartphone révolutionnaire",
-        "image": "lien_image.jpg",
-        "introduction": "Plongez dans les fonctionnalités innovantes de ce nouveau smartphone qui promet de redéfinir l'expérience mobile.",
-        "auteur": "Sophie Martin",
-        "date": "2023-11-10",
-        "corps": "Le dernier smartphone de la société XYZ est enfin arrivé sur le marché et apporte avec lui une multitude de fonctionnalités..."
-      }
-    ],
-    "nouveautes": [
-      {
-        "titre": "Les tendances de la mode pour la saison printemps-été",
-        "image": "lien_image.jpg",
-        "introduction": "Découvrez les dernières tendances de la mode pour cette saison, des couleurs vibrantes aux coupes uniques.",
-        "auteur": "Lucie Tremblay",
-        "date": "2024-01-05",
-        "corps": "La saison printemps-été de cette année apporte avec elle une vague de nouveautés dans l'industrie de la mode..."
-      }
-    ]
-  }
+  "categories": [
+    {
+      "name": "Esport",
+      "articles": [
+        {
+          "id": 4634,
+          "titre": "Les meilleurs moments du dernier tournoi de League of Legends",
+          "image": "default.png",
+          "introduction": "Revivez les moments les plus intenses du tournoi avec des actions incroyables et des retournements de situation inattendus.",
+          "auteur": "Jean Dupont",
+          "date": "2023-12-20",
+          "corps": "Le dernier tournoi de League of Legends a été un spectacle à couper le souffle, avec des équipes qui ont livré des performances incroyables..."
+        },
+        {
+          "id": 1585,
+          "titre": "a",
+          "image": "vinted.png",
+          "introduction": "z",
+          "auteur": "r",
+          "date": "2024-01-08",
+          "corps": "err"
+        }
+      ]
+    },
+    {
+      "name": "Nouveautés",
+      "articles": [
+        {
+          "id": 4974,
+          "titre": "Découvrez le nouveau smartphone révolutionnaire",
+          "image": "default.png",
+          "introduction": "Plongez dans les fonctionnalités innovantes de ce nouveau smartphone qui promet de redéfinir l'expérience mobile.",
+          "auteur": "Sophie Martin",
+          "date": "2023-11-10",
+          "corps": "Le dernier smartphone de la société XYZ est enfin arrivé sur le marché et apporte avec lui une multitude de fonctionnalités..."
+        }
+      ]
+    },
+    {
+      "name": "Présentations",
+      "articles": [
+        {
+          "id": 8473,
+          "titre": "Les tendances de la mode pour la saison printemps-été",
+          "image": "default.png",
+          "introduction": "Découvrez les dernières tendances de la mode pour cette saison, des couleurs vibrantes aux coupes uniques.",
+          "auteur": "Lucie Tremblay",
+          "date": "2024-01-05",
+          "corps": "La saison printemps-été de cette année apporte avec elle une vague de nouveautés dans l'industrie de la mode..."
+        }
+      ]
+    }
+  ]
 }
