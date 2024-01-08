@@ -34,6 +34,24 @@
           "auteur": "Sophie Martin",
           "date": "2023-11-10",
           "corps": "Le dernier smartphone de la société XYZ est enfin arrivé sur le marché et apporte avec lui une multitude de fonctionnalités..."
+        },
+        {
+          "id": 1012,
+          "titre": "",
+          "image": "jul.png",
+          "introduction": "",
+          "auteur": "",
+          "date": "2024-01-08",
+          "corps": ""
+        },
+        {
+          "id": 1407,
+          "titre": "Un mod pour connecter son plug Anal?",
+          "image": "chokbar de bz.png",
+          "introduction": "Le mod LethalHaptics permet au joueur Lethal Company de connecter leur plug anal au jeu.",
+          "auteur": "Fabio Vincentelli",
+          "date": "2024-01-08",
+          "corps": "\"Mais quel intérêt?\" me demanderez vous.\r\nGrâce à ce mod, les joueurs peuvent ressentir le jeu jusque au plus profond de leur être."
         }
       ]
     },
