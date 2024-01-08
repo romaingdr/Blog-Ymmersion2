@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"text/template"
 	"time"
 	"ymmersion2/backend"
 	"ymmersion2/templates"
@@ -22,7 +23,36 @@ func IndexPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func CategoriePage(w http.ResponseWriter, r *http.Request) {
-	templates.Temp.ExecuteTemplate(w, "categorie", nil)
+	tmpl, _ := template.ParseGlob("./templates/*.gohtml")
+
+	content, err := os.ReadFile("blog.json")
+	if err != nil {
+		fmt.Println("Erreur dans la lecture du json : ", err)
+	}
+
+	var result backend.JSONData
+
+	err = json.Unmarshal(content, &result)
+	if err != nil {
+		fmt.Println("Erreur > ", err.Error())
+	}
+
+	var Data backend.Categorie
+
+	switch urlStr := r.URL.RawQuery[9:]; urlStr {
+	case "esport":
+		Data = result.Categories[0]
+	case "nouveautes":
+		Data = result.Categories[1]
+	case "presentations":
+		Data = result.Categories[2]
+	default:
+		tmpl.ExecuteTemplate(w, "erreur", nil)
+	}
+
+	fmt.Println(Data)
+
+	tmpl.ExecuteTemplate(w, "categorie", Data)
 }
 
 func ResultPage(w http.ResponseWriter, r *http.Request) {
