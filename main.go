@@ -7,6 +7,20 @@ import (
 	"net/http"
 )
 
+type Categorie struct {
+	Name     string
+	Articles []Article
+}
+
+type Article struct {
+	Titre  string `json:"titre"`
+	Image  string `json:"image"`
+	Intro  string `json:"introduction"`
+	Auteur string `json:"auteur"`
+	Date   string `json:"date"`
+	Body   string `json:"corps"`
+}
+
 func articlePage(w http.ResponseWriter, r *http.Request) {
 	tmpl, _ := template.ParseGlob("./templates/*.gohtml")
 	tmpl.ExecuteTemplate(w, "article", nil)
