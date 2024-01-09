@@ -4,6 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
+	"strings"
+	"time"
 )
 
 func IsIDPresent(id int, ids []int) bool {
@@ -64,7 +67,11 @@ func GetArticleIDs(filename string) ([]int, error) {
 	}
 
 	return articleIDs, nil
-} // Route /new_article
+}
+
+func TitleContains(s, substr string) bool {
+	return strings.Contains(strings.ToLower(s), strings.ToLower(substr))
+}
 
 func AddArticle(jsonData *JSONData, categoryName string, article Article) error {
 	for i := range jsonData.Categories {
@@ -74,4 +81,28 @@ func AddArticle(jsonData *JSONData, categoryName string, article Article) error 
 		}
 	}
 	return fmt.Errorf("category '%s' not found", categoryName)
-} // Route /new_article
+}
+
+func GetAllArticles(jsonData JSONData) []Article {
+	var allArticles []Article
+	for _, categorie := range jsonData.Categories {
+		allArticles = append(allArticles, categorie.Articles...)
+	}
+
+	return allArticles
+}
+
+func GetRandomArticles(jsonData JSONData) []Article {
+	rand.Seed(time.Now().UnixNano())
+
+	allArticles := GetAllArticles(jsonData)
+
+	if len(allArticles) <= 10 {
+		return allArticles
+	}
+
+	rand.Shuffle(len(allArticles), func(i, j int) {
+		allArticles[i], allArticles[j] = allArticles[j], allArticles[i]
+	})
+	return allArticles[:10]
+}

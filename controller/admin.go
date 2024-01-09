@@ -19,11 +19,6 @@ func AdminPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func AddArticlePage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/new_article" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
-
 	templates.Temp.ExecuteTemplate(w, "newarticle", nil)
 }
 
@@ -60,5 +55,15 @@ func DeletePage(w http.ResponseWriter, r *http.Request) {
 		ioutil.WriteFile("blog.json", newData, 0644)
 
 		http.Redirect(w, r, "/admin", http.StatusSeeOther)
+	}
+}
+
+func DefaultHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusNotFound)
+
+	err := templates.Temp.ExecuteTemplate(w, "erreur", nil)
+	if err != nil {
+		http.Error(w, "Erreur interne du serveur", http.StatusInternalServerError)
+		return
 	}
 }

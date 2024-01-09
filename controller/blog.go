@@ -15,11 +15,6 @@ import (
 )
 
 func ArticlePage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/article" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
-
 	queryID := r.URL.Query().Get("id")
 	articleID, err := strconv.Atoi(queryID)
 	if err != nil {
@@ -57,11 +52,6 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/accueil" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
-
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
 		fmt.Println("Erreur dans la lecture du json : ", err)
@@ -74,31 +64,11 @@ func IndexPage(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Erreur > ", err.Error())
 	}
 
-	randomArticles := getRandomArticles(result, 10)
-
+	randomArticles := backend.GetRandomArticles(result)
 	templates.Temp.ExecuteTemplate(w, "index", randomArticles)
 }
 
-func getRandomArticles(data backend.JSONData, count int) []backend.Article {
-	var randomArticles []backend.Article
-	rand.Seed(time.Now().UnixNano())
-
-	for i := 0; i < count && i < len(data.Categories); i++ {
-		category := data.Categories[i]
-		if len(category.Articles) > 0 {
-			randomIndex := rand.Intn(len(category.Articles))
-			randomArticles = append(randomArticles, category.Articles[randomIndex])
-		}
-	}
-
-	return randomArticles
-}
-
 func CategoriePage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/categorie" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
 
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
@@ -133,12 +103,32 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func ResultPage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/result" {
-		NotFoundPage(w, r, http.StatusNotFound)
+	recherche := r.URL.Query().Get("content")
+	var jsonData backend.JSONData
+
+	file, err := ioutil.ReadFile("blog.json")
+	if err != nil {
+		http.Error(w, "Impossible de charger les données", http.StatusInternalServerError)
 		return
 	}
 
-	templates.Temp.ExecuteTemplate(w, "result", nil)
+	err = json.Unmarshal(file, &jsonData)
+	if err != nil {
+		http.Error(w, "Erreur lors de la lecture du fichier JSON", http.StatusInternalServerError)
+		return
+	}
+
+	var resultArticles []backend.Article
+
+	for _, cat := range jsonData.Categories {
+		for _, article := range cat.Articles {
+			if backend.TitleContains(article.Titre, recherche) {
+				resultArticles = append(resultArticles, article)
+			}
+		}
+	}
+
+	templates.Temp.ExecuteTemplate(w, "result", resultArticles)
 }
 
 func RecuDatas(w http.ResponseWriter, r *http.Request) {
@@ -199,12 +189,5 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 
 	ioutil.WriteFile("blog.json", updatedData, 0644)
 
-	http.Redirect(w, r, "/accueil", http.StatusSeeOther)
+	http.Redirect(w, r, "/new_article", http.StatusSeeOther)
 } // Route /new_article
-
-func NotFoundPage(w http.ResponseWriter, r *http.Request, status int) {
-	w.WriteHeader(status)
-	if status == http.StatusNotFound {
-		templates.Temp.ExecuteTemplate(w, "erreur", status)
-	}
-}
