@@ -1,16 +1,16 @@
 {{define "index"}}
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
     <link rel="stylesheet" href="http://localhost:8080/static/css/header.css">
     <link rel="stylesheet" href="http://localhost:8080/static/css/style.css">
-</head>
+    </head>
 
-<header>
+    <header>
     <div class="navbar">
         <div class="bouton-navbar">
             <ul>
@@ -44,8 +44,9 @@
     </div>
     <div class="barre-header">
     </div>
-</header>
-<body>
+    </header>
+    <body>
+    
     <h1>Articles Récents</h1>
     <ul>
         {{ range . }}
@@ -58,8 +59,8 @@
         {{ end }}
     </ul>
 
-</body>
-<footer>
+    </body>
+    <footer>
     <div class="footer">
         <div class="Produit-par">
             <div class="titre-footer">
@@ -87,7 +88,7 @@
             </a>
         </div>
     </div>
-</footer>
+    </footer>
 
-</html>
+    </html>
 {{end}}
