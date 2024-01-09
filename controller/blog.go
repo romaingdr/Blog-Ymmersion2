@@ -15,11 +15,6 @@ import (
 )
 
 func ArticlePage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/article" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
-
 	queryID := r.URL.Query().Get("id")
 	articleID, err := strconv.Atoi(queryID)
 	if err != nil {
@@ -57,11 +52,6 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/accueil" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
-
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
 		fmt.Println("Erreur dans la lecture du json : ", err)
@@ -95,11 +85,6 @@ func getRandomArticles(data backend.JSONData, count int) []backend.Article {
 }
 
 func CategoriePage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/categorie" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
-
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
 		fmt.Println("Erreur dans la lecture du json : ", err)
@@ -133,11 +118,6 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func ResultPage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/result" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
-
 	templates.Temp.ExecuteTemplate(w, "result", nil)
 }
 
@@ -201,10 +181,3 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 
 	http.Redirect(w, r, "/accueil", http.StatusSeeOther)
 } // Route /new_article
-
-func NotFoundPage(w http.ResponseWriter, r *http.Request, status int) {
-	w.WriteHeader(status)
-	if status == http.StatusNotFound {
-		templates.Temp.ExecuteTemplate(w, "erreur", status)
-	}
-}
