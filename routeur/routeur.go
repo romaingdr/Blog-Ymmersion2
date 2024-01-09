@@ -22,6 +22,6 @@ func Initserv() {
 
 	// Démarrage du serveur
 	log.Println("[✅] Serveur lancé !")
-	fmt.Println("[🌐] http://localhost:8080/new_article")
+	fmt.Println("[🌐] http://localhost:8080/accueil")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

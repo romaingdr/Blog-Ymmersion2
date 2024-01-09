@@ -13,7 +13,7 @@ func IsIDPresent(id int, ids []int) bool {
 		}
 	}
 	return false
-} // Route /new_article
+}
 
 func GetArticleIDs(filename string) ([]int, error) {
 	var data map[string]interface{}
