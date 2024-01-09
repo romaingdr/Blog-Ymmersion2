@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"strconv"
 	"text/template"
 	"time"
 	"ymmersion2/backend"
@@ -15,7 +16,41 @@ import (
 )
 
 func ArticlePage(w http.ResponseWriter, r *http.Request) {
-	templates.Temp.ExecuteTemplate(w, "article", nil)
+	queryID := r.URL.Query().Get("id")
+	articleID, err := strconv.Atoi(queryID)
+	if err != nil {
+		http.Error(w, "Invalid article ID", http.StatusBadRequest)
+		return
+	}
+
+	var jsonData backend.JSONData
+
+	jsonDataFile, err := ioutil.ReadFile("blog.json")
+	err = json.Unmarshal(jsonDataFile, &jsonData)
+
+	var foundArticle *backend.Article
+	for _, category := range jsonData.Categories {
+		for _, article := range category.Articles {
+			if article.Id == articleID {
+				foundArticle = &article
+				break
+			}
+		}
+		if foundArticle != nil {
+			break
+		}
+	}
+
+	if foundArticle == nil {
+		http.Error(w, "Article not found", http.StatusNotFound)
+		return
+	}
+
+	data := map[string]interface{}{
+		"Article": foundArticle,
+	}
+
+	templates.Temp.ExecuteTemplate(w, "article", data)
 }
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {
@@ -36,7 +71,6 @@ func IndexPage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "index", randomArticles)
 }
 
-// Prends un Article au hasard
 func getRandomArticles(data backend.JSONData, count int) []backend.Article {
 	var randomArticles []backend.Article
 	rand.Seed(time.Now().UnixNano())
@@ -79,8 +113,6 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 	default:
 		tmpl.ExecuteTemplate(w, "erreur", nil)
 	}
-
-	fmt.Println(Data)
 
 	tmpl.ExecuteTemplate(w, "categorie", Data)
 }
@@ -149,4 +181,4 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 	ioutil.WriteFile("blog.json", updatedData, 0644)
 
 	http.Redirect(w, r, "/accueil", http.StatusSeeOther)
-} // Route /new_article
+}

@@ -1,11 +1,14 @@
-{{define "newarticle"}}
-    <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ajouter un article</title>
-        <link href="/static/css/header.css" rel="stylesheet">
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
     <header>
         <div class="navbar">
             <div class="bouton-navbar">
@@ -19,18 +22,18 @@
                         </ul>
                     </li>
                     <li><a href="/admin">Admin
-                        </a></li>
+                    </a></li>
                 </ul>
             </div>
             <div class="logo-navbar">
-                <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
+                <img src="octo.png" alt="" width="120px" height="50px">
             </div>
             <div class="recherche">
                 <div class="group">
                     <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
                         <g>
                             <path
-                                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
                             </path>
                         </g>
                     </svg>
@@ -41,35 +44,7 @@
         <div class="barre-header">
         </div>
     </header>
-    <body>
-    <h1>Ajouter un article</h1>
-    <form id="ajoute_article" action="http://localhost:8080/submit" method="POST" enctype="multipart/form-data">
 
-        <label for="categorie">Catégorie :</label><br>
-        <select id="categorie" name="categorie">
-            <option value="Nouveautés">Nouveautés</option>
-            <option value="Esport">E-sport</option>
-            <option value="Présentations">Présentation</option>
-        </select><br><br>
-
-        <label for="titre">Titre : </label><br>
-        <input type="text" id="titre" name="titre"><br><br>
-
-        <label for="intro">Introduction : </label><br>
-        <textarea id="intro" name="intro" rows="4" cols="50"></textarea><br><br>
-
-        <label for="contenu">Contenu : </label><br>
-        <textarea id="contenu" name="contenu" rows="4" cols="50"></textarea><br><br>
-
-        <label for="auteur">Auteur : </label><br>
-        <input type="text" id="auteur" name="auteur"><br><br>
-
-        <label for="image">Importer une image : </label><br>
-        <input type="file" id="image" name="image" accept="image/*"><br><br>
-
-        <input type="submit" value="Ajouter">
-    </form>
-    </body>
     <footer>
         <div class="footer">
             <div class="Produit-par">
@@ -84,7 +59,7 @@
                 </div>
             </div>
             <div class="logo-footer">
-                <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
+                <img src="logo_minimaliste_games_for_forum-removebg-preview.png" alt="" width="50px" height="50px">
             </div>
             <div class="liens-footer">
                 <a href="">
@@ -99,5 +74,6 @@
             </div>
         </div>
     </footer>
-    </html>
-{{end}}
+</body>
+
+</html>

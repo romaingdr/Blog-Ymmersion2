@@ -4,13 +4,31 @@
       "name": "Esport",
       "articles": [
         {
-          "id": 4634,
-          "titre": "Les meilleurs moments du dernier tournoi de League of Legends",
+          "id": 1003,
+          "titre": "Interview exclusive : Rencontre avec une légende du gaming",
           "image": "default.png",
-          "introduction": "Revivez les moments les plus intenses du tournoi avec des actions incroyables et des retournements de situation inattendus.",
-          "auteur": "Jean Dupont",
-          "date": "2023-12-20",
-          "corps": "Le dernier tournoi de League of Legends a été un spectacle à couper le souffle, avec des équipes qui ont livré des performances incroyables..."
+          "introduction": "Découvrez les secrets et les réflexions d'une légende du gaming dans cette interview exclusive.",
+          "auteur": "Emma Dubois",
+          "date": "2024-01-09",
+          "corps": "Une conversation approfondie avec l'une des figures emblématiques du monde du gaming, offrant un aperçu fascinant de son parcours et de sa vision de l'avenir du jeu vidéo."
+        },
+        {
+          "id": 1004,
+          "titre": "La révolution des sports électroniques : Vers une reconnaissance officielle",
+          "image": "default.png",
+          "introduction": "Explorez le mouvement pour une reconnaissance officielle des sports électroniques à l'échelle internationale.",
+          "auteur": "Thomas Rousseau",
+          "date": "2024-01-09",
+          "corps": "Les sports électroniques gagnent en légitimité et en reconnaissance, suscitant des débats sur leur statut en tant que discipline sportive à part entière."
+        },
+        {
+          "id": 1005,
+          "titre": "Les enjeux économiques des équipes professionnelles d'esport",
+          "image": "default.png",
+          "introduction": "Analyse approfondie des modèles économiques des équipes d'esport et de leur viabilité à long terme.",
+          "auteur": "Sophie Leroy",
+          "date": "2024-01-09",
+          "corps": "Derrière les victoires sur l'écran se cachent des stratégies financières complexes : plongée dans l'économie des équipes professionnelles d'esport."
         }
       ]
     },
@@ -27,13 +45,40 @@
           "corps": "Le dernier smartphone de la société XYZ est enfin arrivé sur le marché et apporte avec lui une multitude de fonctionnalités..."
         },
         {
-          "id": 1407,
-          "titre": "Un mod pour connecter son plug Anal?",
-          "image": "chokbar de bz.png",
-          "introduction": "Le mod LethalHaptics permet au joueur Lethal Company de connecter leur plug anal au jeu.",
-          "auteur": "Fabio Vincentelli",
+          "id": 2001,
+          "titre": "La prochaine génération de consoles de jeu : Révolution ou évolution ?",
+          "image": "default.png",
+          "introduction": "Analyse approfondie des tendances de la prochaine génération de consoles de jeu et de leur impact sur l'industrie.",
+          "auteur": "Antoine Dubois",
+          "date": "2024-01-06",
+          "corps": "Les prochaines consoles de jeu promettent des performances révolutionnaires, mais quelles innovations apportent-elles réellement au monde du gaming ?"
+        },
+        {
+          "id": 2002,
+          "titre": "La révolution de l'intelligence artificielle dans les appareils domestiques",
+          "image": "default.png",
+          "introduction": "Explorez comment l'intelligence artificielle transforme nos appareils domestiques et notre quotidien.",
+          "auteur": "Camille Lefebvre",
+          "date": "2024-01-07",
+          "corps": "Des aspirateurs aux réfrigérateurs, l'intelligence artificielle révolutionne nos appareils domestiques. Quelles implications pour nos vies ?"
+        },
+        {
+          "id": 2003,
+          "titre": "La réalité augmentée : Une révolution dans l'expérience utilisateur",
+          "image": "default.png",
+          "introduction": "Découvrez comment la réalité augmentée transforme les expériences utilisateur dans divers domaines.",
+          "auteur": "Julie Martin",
           "date": "2024-01-08",
-          "corps": "\"Mais quel intérêt?\" me demanderez vous.\r\nGrâce à ce mod, les joueurs peuvent ressentir le jeu jusque au plus profond de leur être."
+          "corps": "La réalité augmentée change la façon dont nous interagissons avec le monde numérique. Quels sont les domaines bénéficiant le plus de cette technologie ?"
+        },
+        {
+          "id": 2004,
+          "titre": "Le futur des véhicules électriques : Innovations et défis",
+          "image": "default.png",
+          "introduction": "Analyse des dernières avancées et des défis à relever pour les véhicules électriques.",
+          "auteur": "Pierre Leblanc",
+          "date": "2024-01-09",
+          "corps": "Les véhicules électriques sont en plein essor, mais quels sont les obstacles à surmonter pour une adoption massive et une véritable révolution routière ?"
         }
       ]
     },
@@ -48,6 +93,42 @@
           "auteur": "Lucie Tremblay",
           "date": "2024-01-05",
           "corps": "La saison printemps-été de cette année apporte avec elle une vague de nouveautés dans l'industrie de la mode..."
+        },
+        {
+          "id": 3001,
+          "titre": "Le design écologique : Tendance incontournable de l'année",
+          "image": "default.png",
+          "introduction": "Explorez comment le design écologique s'impose comme une tendance majeure dans divers domaines.",
+          "auteur": "Manon Lambert",
+          "date": "2024-01-06",
+          "corps": "La conception écologique devient un élément central du design moderne. Comment cette tendance façonne-t-elle notre façon de vivre et de consommer ?"
+        },
+        {
+          "id": 3002,
+          "titre": "L'art de la cuisine fusion : Mariage des saveurs du monde",
+          "image": "default.png",
+          "introduction": "Plongez dans l'univers de la cuisine fusion, mêlant habilement les traditions culinaires.",
+          "auteur": "Alexandre Roy",
+          "date": "2024-01-07",
+          "corps": "La cuisine fusion redéfinit les limites de la gastronomie en combinant des saveurs du monde entier. Quelles sont les inspirations derrière cette tendance ?"
+        },
+        {
+          "id": 3003,
+          "titre": "La révolution des matériaux recyclés dans le design d'intérieur",
+          "image": "default.png",
+          "introduction": "Explorez comment les matériaux recyclés transforment le paysage du design d'intérieur.",
+          "auteur": "Clara Gagnon",
+          "date": "2024-01-08",
+          "corps": "L'utilisation de matériaux recyclés dans le design d'intérieur ouvre de nouvelles perspectives de durabilité et de créativité. Comment ces matériaux sont-ils intégrés dans les espaces de vie ?"
+        },
+        {
+          "id": 3004,
+          "titre": "Les nouvelles tendances architecturales : Vers des villes intelligentes",
+          "image": "default.png",
+          "introduction": "Analyse des tendances architecturales qui façonnent l'avenir des villes intelligentes.",
+          "auteur": "Gabriel Fortier",
+          "date": "2024-01-09",
+          "corps": "L'architecture évolue vers des concepts de villes intelligentes, où le design et la technologie se combinent pour améliorer la qualité de vie urbaine. Quels sont les exemples concrets de cette évolution ?"
         }
       ]
     }
