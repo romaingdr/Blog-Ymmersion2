@@ -9,13 +9,17 @@ import (
 	"net/http"
 	"os"
 	"strconv"
-	"text/template"
 	"time"
 	"ymmersion2/backend"
 	"ymmersion2/templates"
 )
 
 func ArticlePage(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/article" {
+		NotFoundPage(w, r, http.StatusNotFound)
+		return
+	}
+
 	queryID := r.URL.Query().Get("id")
 	articleID, err := strconv.Atoi(queryID)
 	if err != nil {
@@ -42,8 +46,7 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if foundArticle == nil {
-		http.Error(w, "Article not found", http.StatusNotFound)
-		return
+		templates.Temp.ExecuteTemplate(w, "erreur", nil)
 	}
 
 	data := map[string]interface{}{
@@ -54,6 +57,11 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/accueil" {
+		NotFoundPage(w, r, http.StatusNotFound)
+		return
+	}
+
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
 		fmt.Println("Erreur dans la lecture du json : ", err)
@@ -88,7 +96,10 @@ func getRandomArticles(data backend.JSONData, count int) []backend.Article {
 }
 
 func CategoriePage(w http.ResponseWriter, r *http.Request) {
-	tmpl, _ := template.ParseGlob("./templates/*.gohtml")
+	if r.URL.Path != "/categorie" {
+		NotFoundPage(w, r, http.StatusNotFound)
+		return
+	}
 
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
@@ -114,20 +125,24 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 	case "categorie=presentations":
 		Data = result.Categories[2]
 	default:
-		tmpl.ExecuteTemplate(w, "erreur", nil)
+		templates.Temp.ExecuteTemplate(w, "erreur", nil)
 	}
 
 	fmt.Println(Data)
 
-	tmpl.ExecuteTemplate(w, "categorie", Data)
+	templates.Temp.ExecuteTemplate(w, "categorie", Data)
 }
 
 func ResultPage(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/result" {
+		NotFoundPage(w, r, http.StatusNotFound)
+		return
+	}
+
 	templates.Temp.ExecuteTemplate(w, "result", nil)
 }
 
 func RecuDatas(w http.ResponseWriter, r *http.Request) {
-
 	r.ParseMultipartForm(10 << 20)
 
 	categorie := r.FormValue("categorie")
@@ -187,3 +202,8 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 
 	http.Redirect(w, r, "/accueil", http.StatusSeeOther)
 } // Route /new_article
+
+func NotFoundPage(w http.ResponseWriter, r *http.Request, status int) {
+	w.WriteHeader(status)
+	templates.Temp.ExecuteTemplate(w, "erreur", status)
+}
