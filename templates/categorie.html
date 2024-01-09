@@ -34,7 +34,9 @@
                             </path>
                         </g>
                     </svg>
-                    <input class="input" type="search" placeholder="Search" />
+                    <form action="/result" method="get">
+                        <input class="input" type="search" name="content" placeholder="Rechercher" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -42,7 +44,6 @@
         </div>
     </header>
     <body>
-    <h1>Page de catégorie</h1>
     <div>
         <h2 class="nom">{{.Name}}</h2>
         {{range .Articles}}
