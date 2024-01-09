@@ -1,13 +1,17 @@
-{{define "index"}}
+{{define "admin"}}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
-    <link rel="stylesheet" href="http://localhost:8080/static/css/header.css">
-    <link rel="stylesheet" href="http://localhost:8080/static/css/style.css">
+    <title>Administration</title>
+    <link href="/static/css/header-admin.css" rel="stylesheet">
+    <link href="/static/css/admin.css" rel="stylesheet">
+    <script>
+        function confirmDelete() {
+            return confirm("Êtes-vous sûr de vouloir supprimer cet article ?");
+        }
+    </script>
 </head>
 
 <body>
@@ -24,8 +28,7 @@
                                 <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                             </ul>
                         </li>
-                        <li><a href="/admin">Admin
-                            </a></li>
+                        <li><a href="/new_article">Ajouter un article</a></li>
                     </ul>
                 </div>
                 <div class="logo-navbar">
@@ -44,24 +47,28 @@
                     </div>
                 </div>
             </div>
-            <div class="barre-header"></div>
+            <div class="barre-header">
+            </div>
         </header>
+        <h1>Page d'administration</h1>
 
-        <section class="articles">
-            <h1>Articles Récents</h1>
-            <ul>
-                {{ range . }}
-                <li>
-                    <a href="/article?id={{ .Id }}">
-                        <h2 style="text-transform:uppercase">{{ .Titre }}</h2>
-                        <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-        </section>
-
-        <div class="caca">
+        {{range .Categories}}
+        <h2>{{.Name}}</h2>  
+        <ul>
+            {{range .Articles}}
+            <li>
+                <h3>{{.Titre}}</h3>
+                <p>{{.Intro}}</p>
+                <p>Auteur : {{.Auteur}} | Date : {{.Date}}</p>
+                <form action="/delete" method="post" onsubmit="return confirmDelete()">
+                    <input type="hidden" name="article_id" value="{{.Id}}">
+                    <input type="submit" value="Supprimer">
+                </form>
+            </li>
+            {{end}}
+        </ul>
+        {{end}}
+        <div>
             <div class="footer">
                 <div class="Produit-par">
                     <div class="titre-footer">
