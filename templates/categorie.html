@@ -1,15 +1,10 @@
-{{define "admin"}}
+{{define "categorie"}}
     <!DOCTYPE html>
     <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Administration</title>
+        <title>Catégorie</title>
         <link href="/static/css/header.css" rel="stylesheet">
-        <script>
-            function confirmDelete() {
-                return confirm("Êtes-vous sûr de vouloir supprimer cet article ?");
-            }
-        </script>
     </head>
     <header>
         <div class="navbar">
@@ -23,7 +18,7 @@
                             <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                         </ul>
                     </li>
-                    <li><a href="/new_article">Ajouter un article
+                    <li><a href="/admin">Admin
                         </a></li>
                 </ul>
             </div>
@@ -39,7 +34,9 @@
                             </path>
                         </g>
                     </svg>
-                    <input class="input" type="search" placeholder="Search" />
+                    <form action="/result" method="get">
+                        <input class="input" type="search" name="content" placeholder="Rechercher" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -47,25 +44,16 @@
         </div>
     </header>
     <body>
-    <h1>Page d'administration</h1>
-
-    {{range .Categories}}
-        <h2>{{.Name}}</h2>
-        <ul>
-            {{range .Articles}}
-                <li>
-                    <h3>{{.Titre}}</h3>
-                    <p>{{.Intro}}</p>
-                    <p>Auteur : {{.Auteur}} | Date : {{.Date}}</p>
-                    <form action="/delete" method="post" onsubmit="return confirmDelete()">
-                        <input type="hidden" name="article_id" value="{{.Id}}">
-                        <input type="submit" value="Supprimer">
-                    </form>
-                </li>
-            {{end}}
-        </ul>
-    {{end}}
-
+    <div>
+        <h2 class="nom">{{.Name}}</h2>
+        {{range .Articles}}
+            <div>
+                <img src="/static/images/{{.Image}}" alt="image de l'article">
+                <a class="titre" href="/article?id={{.Id}}">{{.Titre}}</a>
+                <h3>{{.Auteur}}</h3>
+            </div>
+        {{end}}
+    </div>
     </body>
     <footer>
         <div class="footer">

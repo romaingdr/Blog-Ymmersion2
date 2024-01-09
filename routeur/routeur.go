@@ -21,6 +21,8 @@ func Initserv() {
 	http.HandleFunc("/submit", controller.RecuDatas)
 	http.HandleFunc("/delete", controller.DeletePage)
 
+	http.HandleFunc("/", controller.DefaultHandler)
+
 	// Démarrage du serveur
 	log.Println("[✅] Serveur lancé !")
 	fmt.Println("[🌐] http://localhost:8080/admin")
