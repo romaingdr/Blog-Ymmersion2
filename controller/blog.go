@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"strconv"
 	"text/template"
 	"time"
 	"ymmersion2/backend"
@@ -15,7 +16,41 @@ import (
 )
 
 func ArticlePage(w http.ResponseWriter, r *http.Request) {
-	templates.Temp.ExecuteTemplate(w, "article", nil)
+	queryID := r.URL.Query().Get("id")
+	articleID, err := strconv.Atoi(queryID)
+	if err != nil {
+		http.Error(w, "Invalid article ID", http.StatusBadRequest)
+		return
+	}
+
+	var jsonData backend.JSONData
+
+	jsonDataFile, err := ioutil.ReadFile("blog.json")
+	err = json.Unmarshal(jsonDataFile, &jsonData)
+
+	var foundArticle *backend.Article
+	for _, category := range jsonData.Categories {
+		for _, article := range category.Articles {
+			if article.Id == articleID {
+				foundArticle = &article
+				break
+			}
+		}
+		if foundArticle != nil {
+			break
+		}
+	}
+
+	if foundArticle == nil {
+		http.Error(w, "Article not found", http.StatusNotFound)
+		return
+	}
+
+	data := map[string]interface{}{
+		"Article": foundArticle,
+	}
+
+	templates.Temp.ExecuteTemplate(w, "article", data)
 }
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {
