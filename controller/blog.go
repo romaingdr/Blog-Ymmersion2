@@ -69,7 +69,9 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 
 	var Data backend.Categorie
 
-	switch urlStr := r.URL.RawQuery; urlStr {
+	urlStr := r.URL.RawQuery
+	fmt.Println(urlStr)
+	switch urlStr {
 	case "categorie=esport":
 		Data = result.Categories[0]
 	case "categorie=nouveautes":
