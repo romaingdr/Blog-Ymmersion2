@@ -20,6 +20,7 @@ func Initserv() {
 	http.HandleFunc("/new_article", controller.AddArticlePage)
 	http.HandleFunc("/submit", controller.RecuDatas)
 	http.HandleFunc("/delete", controller.DeletePage)
+	http.HandleFunc("/mentions_legales", controller.Mentions)
 
 	http.HandleFunc("/", controller.DefaultHandler)
 

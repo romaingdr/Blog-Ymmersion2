@@ -1,4 +1,4 @@
-{{define "index"}}
+{{define "mentions"}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,31 +47,19 @@
             <div class="barre-header"></div>
         </header>
 
-        <section class="articles">
-            <h1>Articles Récents</h1>
-            <ul>
-                {{ range . }}
-                <li>
-                    <div id="title">
+        <h1>Mentions Légales</h1>
+        <p>Ceci est une entreprise fictive.</p>
+        <p>Siège social: 2 rue le Corbusier, YNOV-Aix Campus.</p>
+        <p>SIREN : 001 002 003</p>
+        <p>SIRET : 12345678910111</p>
+        <p>TVA Intracommunautaire : FR 01234567890</p>
+        <p>RCS : Aix A 123 456 789</p>
+        <p>D2claration CNIL n° 1234567</p>
+        <p>Email et téléphone : romain.goudergues@ynov.com - +33 7 apagnan</p>
+        <p>Directeur de publication : Romain GOUDERGUES</p>
+        <p>Hébèrgement : IPT - cramptés - 13090 Aix-en-Provence, France - Tel : +33 7 cramptés</p>
 
-                    </div>
-                    <div id="description">
-                        <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
-                        <div id="textu">
-                            <h1 style="text-transform:uppercase">{{ .Titre }}</h1>
-                            <div>
-                                <a href="/article?id={{ .Id }}">
-                                    <span>Voir plus</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                {{ end }}
-            </ul>
-        </section>
-
-        <footer>
+        <div class="caca">
             <div class="footer">
                 <div class="Produit-par">
                     <div class="titre-footer">
@@ -94,12 +82,12 @@
                     <a href="">
                         Explication du thème
                     </a>
-                    <a href="/mentions_legales">
+                    <a href="#">
                         Mention Légal
                     </a>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
 </body>
 
