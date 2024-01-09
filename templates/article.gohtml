@@ -7,22 +7,23 @@
         <link href="/static/css/header.css" rel="stylesheet">
     </head>
     <header>
-        <div class="img-header">
-            <img src="http://localhost:8080/static/images/image-header.png" alt="image header">
-        </div>
         <div class="navbar">
-            <div>
+            <div class="bouton-navbar">
                 <ul>
-                    <li><a href="/accueil"><img src="http://localhost:8080/static/images/home.png" alt="" width="25px" height="25px">Accueil</a></li>
-                    <li><a><img src="http://localhost:8080/static/images/dossier.png" alt="" width="25px" height="25px"> Catégories</a>
+                    <li><a href="/accueil">Accueil</a></li>
+                    <li><a> Catégories</a>
                         <ul>
                             <li><a href="/categorie?categorie=nouveautes">Nouveauté</a></li>
                             <li><a href="/categorie?categorie=esport">E-Sport</a></li>
                             <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                         </ul>
                     </li>
-                    <li><a href="/new_article"><img src="http://localhost:8080/static/images/plus.png" alt="" width="25px" height="25px">Créer un article</a></li>
+                    <li><a href="/admin">Admin
+                        </a></li>
                 </ul>
+            </div>
+            <div class="logo-navbar">
+                <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
             </div>
             <div class="recherche">
                 <div class="group">
@@ -37,6 +38,8 @@
                 </div>
             </div>
         </div>
+        <div class="barre-header">
+        </div>
     </header>
     <body>
     <h1>{{.Article.Titre}}</h1>
@@ -49,5 +52,34 @@
         <p>{{.Article.Body}}</p>
     </div>
     </body>
+    <footer>
+        <div class="footer">
+            <div class="Produit-par">
+                <div class="titre-footer">
+                    <p>Produit par : </p>
+                </div>
+                <div class="perso-footer">
+                    <p>Enzo Carbonara</p>
+                    <p>Romain GOUDERGUES</p>
+                    <p>Fabio VINCENTELLI</p>
+                    <p>Kantin FAGNIART</p>
+                </div>
+            </div>
+            <div class="logo-footer">
+                <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
+            </div>
+            <div class="liens-footer">
+                <a href="">
+                    Répartition des tâches de l'équipe
+                </a>
+                <a href="">
+                    Explication du thème
+                </a>
+                <a href="">
+                    Mention Légal
+                </a>
+            </div>
+        </div>
+    </footer>
     </html>
 {{end}}

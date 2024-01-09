@@ -19,9 +19,10 @@ func Initserv() {
 	http.HandleFunc("/result", controller.ResultPage)
 	http.HandleFunc("/new_article", controller.AddArticlePage)
 	http.HandleFunc("/submit", controller.RecuDatas)
+	http.HandleFunc("/delete", controller.DeletePage)
 
 	// Démarrage du serveur
 	log.Println("[✅] Serveur lancé !")
-	fmt.Println("[🌐] http://localhost:8080/accueil")
+	fmt.Println("[🌐] http://localhost:8080/admin")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

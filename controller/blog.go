@@ -79,7 +79,6 @@ func IndexPage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "index", randomArticles)
 }
 
-// Prends un Article au hasard
 func getRandomArticles(data backend.JSONData, count int) []backend.Article {
 	var randomArticles []backend.Article
 	rand.Seed(time.Now().UnixNano())
@@ -205,5 +204,7 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 
 func NotFoundPage(w http.ResponseWriter, r *http.Request, status int) {
 	w.WriteHeader(status)
-	templates.Temp.ExecuteTemplate(w, "erreur", status)
+	if status == http.StatusNotFound {
+		templates.Temp.ExecuteTemplate(w, "erreur", status)
+	}
 }
