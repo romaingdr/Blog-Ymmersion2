@@ -71,7 +71,6 @@ func IndexPage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "index", randomArticles)
 }
 
-// Prends un Article au hasard
 func getRandomArticles(data backend.JSONData, count int) []backend.Article {
 	var randomArticles []backend.Article
 	rand.Seed(time.Now().UnixNano())
@@ -114,8 +113,6 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 	default:
 		tmpl.ExecuteTemplate(w, "erreur", nil)
 	}
-
-	fmt.Println(Data)
 
 	tmpl.ExecuteTemplate(w, "categorie", Data)
 }
@@ -184,4 +181,4 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 	ioutil.WriteFile("blog.json", updatedData, 0644)
 
 	http.Redirect(w, r, "/accueil", http.StatusSeeOther)
-} // Route /new_article
+}
