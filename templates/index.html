@@ -1,5 +1,4 @@
 {{define "index"}}
-{{define "index"}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
-    <link rel="stylesheet" href="http://localhost:8080/static/css/header.css">
-    <link rel="stylesheet" href="http://localhost:8080/static/css/style.css">
     <link rel="stylesheet" href="http://localhost:8080/static/css/header.css">
     <link rel="stylesheet" href="http://localhost:8080/static/css/style.css">
 </head>
@@ -55,16 +52,26 @@
             <ul>
                 {{ range . }}
                 <li>
-                    <a href="/article?id={{ .Id }}">
-                        <h2 style="text-transform:uppercase">{{ .Titre }}</h2>
+                    <div id="title">
+
+                    </div>
+                    <div id="description">
                         <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
-                    </a>
+                        <div id="textu">
+                            <h1 style="text-transform:uppercase">{{ .Titre }}</h1>
+                            <div>
+                                <a href="/article?id={{ .Id }}">
+                                    <span>Voir plus</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 {{ end }}
             </ul>
         </section>
 
-        <div class="caca">
+        <footer>
             <div class="footer">
                 <div class="Produit-par">
                     <div class="titre-footer">
@@ -92,7 +99,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </footer>
     </div>
 </body>
 

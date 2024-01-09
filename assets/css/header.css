@@ -16,8 +16,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    position: relative;
-
+    display: flex;
+    flex-direction: column;
 }
 
 body .caca{
@@ -142,13 +142,13 @@ input:hover {
     height: 1rem;
 }
 
-.caca {
-    background-color: aqua;
+footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
     z-index: 1000;
+    margin-top: 10%;
 }
 
 .footer {

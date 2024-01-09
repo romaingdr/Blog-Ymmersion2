@@ -3,7 +3,7 @@
     src: url('../font/Eurostile Extended Regular.ttf') format('truetype');
 }
 
-h2 {
+h1 {
     font-family: 'Euro';
 }
 
@@ -17,6 +17,35 @@ body {
 }
 
 .articles {
-    height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.articles > ul {
+    margin: 2%;
+    list-style-type: none; 
+}
+
+.articles > li {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#title {
+    text-decoration: none;
+}
+
+
+#description {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+#textu {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
 }
