@@ -4,22 +4,94 @@
       "name": "Esport",
       "articles": [
         {
-          "id": 1004,
+          "id": 1001,
           "titre": "La révolution des sports électroniques : Vers une reconnaissance officielle",
-          "image": "default.png",
+          "image": "1001.png",
           "introduction": "Explorez le mouvement pour une reconnaissance officielle des sports électroniques à l'échelle internationale.",
           "auteur": "Thomas Rousseau",
           "date": "2024-01-09",
           "corps": "Les sports électroniques gagnent en légitimité et en reconnaissance, suscitant des débats sur leur statut en tant que discipline sportive à part entière."
         },
         {
-          "id": 1005,
+          "id": 1002,
           "titre": "Les enjeux économiques des équipes professionnelles d'esport",
-          "image": "default.png",
+          "image": "1002.png",
           "introduction": "Analyse approfondie des modèles économiques des équipes d'esport et de leur viabilité à long terme.",
           "auteur": "Sophie Leroy",
           "date": "2024-01-09",
           "corps": "Derrière les victoires sur l'écran se cachent des stratégies financières complexes : plongée dans l'économie des équipes professionnelles d'esport."
+        },
+        {
+          "id": 1003,
+          "titre": "L'impact psychologique de la compétition esportive de haut niveau",
+          "image": "1003.png",
+          "introduction": "Découvrez comment la pression de la compétition esportive affecte la santé mentale des joueurs professionnels.",
+          "auteur": "Jeanne Dubois",
+          "date": "2024-01-08",
+          "corps": "La compétition esportive intense peut avoir des conséquences sur la santé mentale des joueurs, allant de la pression pour performer à la gestion du stress en compétition."
+        },
+        {
+          "id": 1004,
+          "titre": "Les jeux émergents à surveiller cette année",
+          "image": "1004.png",
+          "introduction": "Découvrez les nouveaux jeux qui pourraient marquer le paysage esportif cette année.",
+          "auteur": "Hugo Martinez",
+          "date": "2024-01-07",
+          "corps": "Certains nouveaux jeux émergent sur la scène esportive, suscitant l'attention et attirant déjà des communautés de joueurs passionnées."
+        },
+        {
+          "id": 1005,
+          "titre": "L'évolution des tournois esportifs : Tendances et défis",
+          "image": "1005.png",
+          "introduction": "Analyse des changements récents dans le paysage des tournois esportifs et des défis auxquels ils font face.",
+          "auteur": "Charlotte Dubois",
+          "date": "2024-01-06",
+          "corps": "Les tournois esportifs évoluent constamment. Quelles sont les tendances actuelles et les défis que rencontrent les organisateurs ?"
+        },
+        {
+          "id": 1006,
+          "titre": "L'essor des jeux mobiles dans l'univers esportif",
+          "image": "default.png",
+          "introduction": "Exploration de l'influence croissante des jeux mobiles dans la scène esportive mondiale.",
+          "auteur": "Léa Petit",
+          "date": "2024-01-05",
+          "corps": "Les jeux mobiles gagnent en popularité et leur impact sur l'esport est de plus en plus significatif. Comment ces jeux s'intègrent-ils dans le monde compétitif des sports électroniques ?"
+        },
+        {
+          "id": 1007,
+          "titre": "L'éthique dans les compétitions esportives : Enjeux et débats",
+          "image": "default.png",
+          "introduction": "Discussion sur les questions éthiques émergentes dans le domaine des compétitions esportives.",
+          "auteur": "Gabriel Moreau",
+          "date": "2024-01-04",
+          "corps": "L'éthique est un sujet brûlant dans les compétitions esportives, de la triche potentielle à l'utilisation des données personnelles des joueurs. Quels sont les principaux débats en cours ?"
+        },
+        {
+          "id": 1008,
+          "titre": "La croissance économique fulgurante de l'esport : Analyse des tendances",
+          "image": "default.png",
+          "introduction": "Plongée dans l'expansion financière rapide de l'esport et ses implications sur l'industrie du divertissement.",
+          "auteur": "Sophie Martin",
+          "date": "2024-01-09",
+          "corps": "L'esport devient un marché lucratif, attirant des investissements massifs. Analyse des facteurs contribuant à cette croissance exponentielle."
+        },
+        {
+          "id": 1009,
+          "titre": "Le rôle croissant des sponsors dans l'esport : Impact et évolution",
+          "image": "default.png",
+          "introduction": "Analyse de l'influence grandissante des sponsors dans l'esport et leurs stratégies pour toucher un public plus large.",
+          "auteur": "Antoine Dubois",
+          "date": "2024-01-08",
+          "corps": "Les sponsors jouent un rôle crucial dans l'esport, modifiant le paysage économique et médiatique. Exploration de leurs tactiques et de leur impact."
+        },
+        {
+          "id": 1010,
+          "titre": "L'essor des compétitions féminines dans l'univers de l'esport",
+          "image": "default.png",
+          "introduction": "Analyse du mouvement croissant des compétitions esportives féminines et des défis rencontrés.",
+          "auteur": "Lucie Tremblay",
+          "date": "2024-01-07",
+          "corps": "Les compétitions esportives féminines gagnent en popularité mais font face à des obstacles. Analyse de cette évolution et des enjeux pour les joueuses."
         }
       ]
     },
@@ -27,58 +99,94 @@
       "name": "Nouveautés",
       "articles": [
         {
-          "id": 4974,
-          "titre": "Découvrez le nouveau smartphone révolutionnaire",
-          "image": "default.png",
-          "introduction": "Plongez dans les fonctionnalités innovantes de ce nouveau smartphone qui promet de redéfinir l'expérience mobile.",
-          "auteur": "Sophie Martin",
-          "date": "2023-11-10",
-          "corps": "Le dernier smartphone de la société XYZ est enfin arrivé sur le marché et apporte avec lui une multitude de fonctionnalités..."
-        },
-        {
           "id": 2001,
-          "titre": "La prochaine génération de consoles de jeu : Révolution ou évolution ?",
+          "titre": "L'annonce surprise d'un nouvel opus pour la franchise légendaire",
           "image": "default.png",
-          "introduction": "Analyse approfondie des tendances de la prochaine génération de consoles de jeu et de leur impact sur l'industrie.",
-          "auteur": "Antoine Dubois",
-          "date": "2024-01-06",
-          "corps": "Les prochaines consoles de jeu promettent des performances révolutionnaires, mais quelles innovations apportent-elles réellement au monde du gaming ?"
+          "introduction": "Plongez dans les détails de la dernière annonce d'un nouvel opus d'une franchise bien-aimée.",
+          "auteur": "Marc Dupont",
+          "date": "2024-01-09",
+          "corps": "Une annonce inattendue a secoué la communauté des joueurs. Quelles sont les attentes et les premières réactions suite à cette révélation ?"
         },
         {
           "id": 2002,
-          "titre": "La révolution de l'intelligence artificielle dans les appareils domestiques",
+          "titre": "Analyse des avancées technologiques dans les prochains jeux AAA",
           "image": "default.png",
-          "introduction": "Explorez comment l'intelligence artificielle transforme nos appareils domestiques et notre quotidien.",
-          "auteur": "Camille Lefebvre",
-          "date": "2024-01-07",
-          "corps": "Des aspirateurs aux réfrigérateurs, l'intelligence artificielle révolutionne nos appareils domestiques. Quelles implications pour nos vies ?"
+          "introduction": "Explorez les technologies de pointe intégrées dans les prochains titres phares du monde du jeu vidéo.",
+          "auteur": "Sophie Rousseau",
+          "date": "2024-01-08",
+          "corps": "Les jeux vidéo de grande envergure repoussent sans cesse les limites technologiques. Quelles avancées révolutionnaires attendent les joueurs dans les mois à venir ?"
         },
         {
           "id": 2003,
-          "titre": "La réalité augmentée : Une révolution dans l'expérience utilisateur",
+          "titre": "La révolution des jeux indépendants : Innovation et créativité",
           "image": "default.png",
-          "introduction": "Découvrez comment la réalité augmentée transforme les expériences utilisateur dans divers domaines.",
-          "auteur": "Julie Martin",
-          "date": "2024-01-08",
-          "corps": "La réalité augmentée change la façon dont nous interagissons avec le monde numérique. Quels sont les domaines bénéficiant le plus de cette technologie ?"
+          "introduction": "Découvrez comment les jeux indépendants redéfinissent l'industrie et apportent des expériences uniques.",
+          "auteur": "Lucas Martin",
+          "date": "2024-01-07",
+          "corps": "Les jeux indépendants connaissent un essor remarquable. Comment ces créations plus modestes parviennent-elles à rivaliser avec les titres AAA traditionnels ?"
         },
         {
           "id": 2004,
-          "titre": "Le futur des véhicules électriques : Innovations et défis",
+          "titre": "Les prochaines étapes de la réalité virtuelle dans le monde du gaming",
           "image": "default.png",
-          "introduction": "Analyse des dernières avancées et des défis à relever pour les véhicules électriques.",
-          "auteur": "Pierre Leblanc",
-          "date": "2024-01-09",
-          "corps": "Les véhicules électriques sont en plein essor, mais quels sont les obstacles à surmonter pour une adoption massive et une véritable révolution routière ?"
+          "introduction": "Analyse des avancées attendues dans l'intégration de la réalité virtuelle dans les jeux vidéo.",
+          "auteur": "Eva Dubois",
+          "date": "2024-01-06",
+          "corps": "La réalité virtuelle continue de se développer. Quelles sont les améliorations à venir et comment vont-elles transformer notre manière de jouer ?"
         },
         {
-          "id": 7773,
-          "titre": "le caca en boite",
-          "image": "vinted.png",
-          "introduction": "a",
-          "auteur": "a",
-          "date": "2024-01-09",
-          "corps": "a"
+          "id": 2005,
+          "titre": "Les jeux cross-plateformes : Vers une expérience de jeu unifiée",
+          "image": "default.png",
+          "introduction": "Exploration de l'essor des jeux permettant de jouer entre différentes plateformes.",
+          "auteur": "Alexandre Roy",
+          "date": "2024-01-05",
+          "corps": "La possibilité de jouer à travers différentes plateformes prend de l'ampleur. Quelles sont les implications pour l'avenir du jeu vidéo et de sa communauté ?"
+        },
+        {
+          "id": 2006,
+          "titre": "L'impact des microtransactions sur l'expérience des joueurs",
+          "image": "default.png",
+          "introduction": "Analyse des effets des microtransactions sur le jeu et les habitudes de consommation.",
+          "auteur": "Clara Gagnon",
+          "date": "2024-01-04",
+          "corps": "Les microtransactions suscitent des débats passionnés. Comment ces pratiques influencent-elles l'expérience de jeu et la perception des joueurs ?"
+        },
+        {
+          "id": 2007,
+          "titre": "Le futur des compétitions esportives dans les jeux de combat",
+          "image": "default.png",
+          "introduction": "Exploration des perspectives de l'esport dans les jeux de combat compétitifs.",
+          "auteur": "Théo Lambert",
+          "date": "2024-01-03",
+          "corps": "Les jeux de combat ont toujours eu une place spéciale dans l'esport. Quel avenir attend les compétitions dans ce domaine ?"
+        },
+        {
+          "id": 2008,
+          "titre": "Les jeux rétro : Renaissance d'une nostalgie vidéoludique",
+          "image": "default.png",
+          "introduction": "Découvrez le regain d'intérêt pour les jeux rétro et leur impact sur l'industrie actuelle.",
+          "auteur": "Gabriel Fortier",
+          "date": "2024-01-02",
+          "corps": "Les jeux rétro reviennent sur le devant de la scène. Comment cette vague de nostalgie influence-t-elle l'offre"
+        },
+        {
+          "id": 2009,
+          "titre": "La montée en puissance des jeux de narration : Une expérience immersive",
+          "image": "default.png",
+          "introduction": "Exploration du succès croissant des jeux offrant des expériences narratives captivantes.",
+          "auteur": "Sophie Lefebvre",
+          "date": "2024-01-01",
+          "corps": "Les jeux axés sur la narration gagnent en popularité. Comment ces jeux parviennent-ils à captiver les joueurs et à offrir des expériences immersives ?"
+        },
+        {
+          "id": 2010,
+          "titre": "L'avenir des jeux en réalité augmentée : Intégration et potentiel",
+          "image": "default.png",
+          "introduction": "Analyse des perspectives et des innovations attendues dans les jeux en réalité augmentée.",
+          "auteur": "Thomas Martin",
+          "date": "2023-12-31",
+          "corps": "Les jeux en réalité augmentée offrent de nouvelles dimensions de jeu. Quelles avancées sont attendues et comment ces jeux pourraient-ils redéfinir l'expérience vidéoludique ?"
         }
       ]
     },
@@ -86,50 +194,96 @@
       "name": "Présentations",
       "articles": [
         {
-          "id": 8473,
-          "titre": "Les tendances de la mode pour la saison printemps-été",
-          "image": "default.png",
-          "introduction": "Découvrez les dernières tendances de la mode pour cette saison, des couleurs vibrantes aux coupes uniques.",
-          "auteur": "Lucie Tremblay",
-          "date": "2024-01-05",
-          "corps": "La saison printemps-été de cette année apporte avec elle une vague de nouveautés dans l'industrie de la mode..."
-        },
-        {
           "id": 3001,
-          "titre": "Le design écologique : Tendance incontournable de l'année",
-          "image": "default.png",
-          "introduction": "Explorez comment le design écologique s'impose comme une tendance majeure dans divers domaines.",
-          "auteur": "Manon Lambert",
-          "date": "2024-01-06",
-          "corps": "La conception écologique devient un élément central du design moderne. Comment cette tendance façonne-t-elle notre façon de vivre et de consommer ?"
+          "titre": "Découvrez l'immensité de 'The Witcher 3: Wild Hunt'",
+          "image": "thewitcher.jpg",
+          "introduction": "Plongez dans le monde ouvert et épique de 'The Witcher 3: Wild Hunt', une aventure RPG encensée par la critique.",
+          "auteur": "Sophie Leroy",
+          "date": "2024-01-09",
+          "corps": "'The Witcher 3: Wild Hunt' offre un gameplay riche, des quêtes captivantes et un monde détaillé, plongeant les joueurs dans une expérience inoubliable."
         },
         {
           "id": 3002,
-          "titre": "L'art de la cuisine fusion : Mariage des saveurs du monde",
-          "image": "default.png",
-          "introduction": "Plongez dans l'univers de la cuisine fusion, mêlant habilement les traditions culinaires.",
-          "auteur": "Alexandre Roy",
-          "date": "2024-01-07",
-          "corps": "La cuisine fusion redéfinit les limites de la gastronomie en combinant des saveurs du monde entier. Quelles sont les inspirations derrière cette tendance ?"
+          "titre": "Analyse approfondie de la saga 'Mass Effect'",
+          "image": "masseffect.jpg",
+          "introduction": "Explorez la saga épique de science-fiction 'Mass Effect', reconnue pour son scénario et ses choix narratifs.",
+          "auteur": "Antoine Dubois",
+          "date": "2024-01-08",
+          "corps": "'Mass Effect' offre une expérience RPG immersive avec des personnages mémorables, des décisions impactantes et une exploration interstellaire."
         },
         {
           "id": 3003,
-          "titre": "La révolution des matériaux recyclés dans le design d'intérieur",
-          "image": "default.png",
-          "introduction": "Explorez comment les matériaux recyclés transforment le paysage du design d'intérieur.",
-          "auteur": "Clara Gagnon",
-          "date": "2024-01-08",
-          "corps": "L'utilisation de matériaux recyclés dans le design d'intérieur ouvre de nouvelles perspectives de durabilité et de créativité. Comment ces matériaux sont-ils intégrés dans les espaces de vie ?"
+          "titre": "Plongée dans l'univers mystérieux de 'Death Stranding'",
+          "image": "deathstranding.jpg",
+          "introduction": "Explorez le monde énigmatique et unique de 'Death Stranding', un jeu encensé pour sa narration et son atmosphère.",
+          "auteur": "Lucie Tremblay",
+          "date": "2024-01-07",
+          "corps": "'Death Stranding' propose une expérience singulière mêlant exploration, connexion multijoueur et réflexion philosophique, offrant une aventure hors du commun."
         },
         {
           "id": 3004,
-          "titre": "Les nouvelles tendances architecturales : Vers des villes intelligentes",
-          "image": "default.png",
-          "introduction": "Analyse des tendances architecturales qui façonnent l'avenir des villes intelligentes.",
+          "titre": "Analyse approfondie de 'Cyberpunk 2077'",
+          "image": "cyberpunk.jpg",
+          "introduction": "Découvrez l'univers futuriste et immersif de 'Cyberpunk 2077', malgré son lancement controversé.",
           "auteur": "Gabriel Fortier",
-          "date": "2024-01-09",
-          "corps": "L'architecture évolue vers des concepts de villes intelligentes, où le design et la technologie se combinent pour améliorer la qualité de vie urbaine. Quels sont les exemples concrets de cette évolution ?"
+          "date": "2024-01-06",
+          "corps": "'Cyberpunk 2077' offre un monde ouvert dense, une narration captivante et des éléments de RPG dans un univers cyberpunk saisissant malgré des débuts chaotiques."
+        },
+        {
+          "id": 3005,
+          "titre": "Plongée dans l'histoire de 'Red Dead Redemption 2'",
+          "image": "rd2.jpeg",
+          "introduction": "Explorez le Far West immersif et détaillé de 'Red Dead Redemption 2', encensé pour sa qualité narrative et son monde ouvert.",
+          "auteur": "Eva Dubois",
+          "date": "2024-01-05",
+          "corps": "'Red Dead Redemption 2' offre une expérience immersive dans un monde vaste, mêlant histoire captivante, exploration et interactions réalistes."
+        },
+        {
+          "id": 3006,
+          "titre": "Plongée dans l'univers épique de 'The Legend of Zelda: Breath of the Wild'",
+          "image": "botw.jpg",
+          "introduction": "Explorez le royaume fantastique et ouvert de 'The Legend of Zelda: Breath of the Wild', encensé pour sa liberté d'exploration.",
+          "auteur": "Sophie Leroy",
+          "date": "2024-01-04",
+          "corps": "'The Legend of Zelda: Breath of the Wild' offre une aventure en monde ouvert, des énigmes créatives et une immersion totale dans un univers magique."
+        },
+        {
+          "id": 3007,
+          "titre": "Analyse détaillée de la saga 'Dark Souls'",
+          "image": "darksouls.jpg",
+          "introduction": "Explorez la difficulté et l'atmosphère unique de la saga 'Dark Souls', reconnue pour son challenge et son level design.",
+          "auteur": "Antoine Dubois",
+          "date": "2024-01-03",
+          "corps": "'Dark Souls' offre une expérience de jeu exigeante et gratifiante avec un monde sombre, des combats tactiques et une histoire cryptique."
+        },
+        {
+          "id": 3008,
+          "titre": "Découvrez l'univers futuriste de 'Halo Infinite'",
+          "image": "halo.jpg",
+          "introduction": "Plongez dans l'univers de science-fiction de 'Halo Infinite', un jeu attendu pour ses combats et son lore.",
+          "auteur": "Lucie Tremblay",
+          "date": "2024-01-02",
+          "corps": "'Halo Infinite' promet une aventure futuriste, mêlant action frénétique, exploration et une histoire riche dans l'univers de la série Halo."
+        },
+        {
+          "id": 3009,
+          "titre": "Analyse approfondie de 'Final Fantasy VII Remake'",
+          "image": "ff7.jpeg",
+          "introduction": "Explorez le remake salué de 'Final Fantasy VII', encensé pour sa modernisation et ses graphismes.",
+          "auteur": "Gabriel Fortier",
+          "date": "2024-01-01",
+          "corps": "'Final Fantasy VII Remake' offre une refonte fidèle et épique d'un classique, mêlant des combats dynamiques et une narration immersive."
+        },
+        {
+          "id": 3010,
+          "titre": "Plongée dans l'univers mystique de 'Horizon Zero Dawn'",
+          "image": "horizon.jpg",
+          "introduction": "Explorez le monde post-apocalyptique de 'Horizon Zero Dawn', reconnu pour son histoire et son héroïne.",
+          "auteur": "Eva Dubois",
+          "date": "2023-12-31",
+          "corps": "'Horizon Zero Dawn' offre un monde ouvert captivant, des machines redoutables et une quête poignante dans un univers post-apocalyptique."
         }
+
       ]
     }
   ]

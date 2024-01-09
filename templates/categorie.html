@@ -50,13 +50,24 @@
         </header>
         <div>
             <h2 class="nom">{{.Name}}</h2>
-            {{range .Articles}}
-            <div>
-                <img src="/static/images/{{.Image}}" alt="image de l'article">
-                <a class="titre" href="/article?id={{.Id}}">{{.Titre}}</a>
-                <h3>{{.Auteur}}</h3>
-            </div>
-            {{end}}
+            {{ range .Articles }}
+            <li>
+                <div id="title">
+
+                </div>
+                <div id="description">
+                    <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
+                    <div id="textu">
+                        <h1 style="text-transform:uppercase">{{ .Titre }}</h1>
+                        <div>
+                            <a href="/article?id={{ .Id }}">
+                                <span>Voir plus</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{ end }}
         </div>
         <footer>
             <div class="footer">
