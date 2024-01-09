@@ -9,14 +9,9 @@ h2 {
 
 body {
     padding-top: 70px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
 }
 
 .articles {
-    height: 100%;
-    width: 100%;
+   height: 90%;
 }
+
