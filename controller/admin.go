@@ -19,11 +19,6 @@ func AdminPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func AddArticlePage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/new_article" {
-		NotFoundPage(w, r, http.StatusNotFound)
-		return
-	}
-
 	templates.Temp.ExecuteTemplate(w, "newarticle", nil)
 }
 
