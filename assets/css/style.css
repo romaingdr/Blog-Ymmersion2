@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Coldiac';
+    src: url('http://localhost8080/font/Coldiac.ttf') format('truetype');
+}
+
+h1 {
+    text-decoration: none;
+    text-transform: none;
+    font-family: 'Coldiac', sans-serif;
+}
