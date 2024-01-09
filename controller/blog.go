@@ -191,3 +191,7 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 
 	http.Redirect(w, r, "/new_article", http.StatusSeeOther)
 } // Route /new_article
+
+func Mentions(w http.ResponseWriter, r *http.Request) {
+	templates.Temp.ExecuteTemplate(w, "mentions", nil)
+}
