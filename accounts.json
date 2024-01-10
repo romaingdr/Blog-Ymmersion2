@@ -1,0 +1,9 @@
+{
+  "comptes": [
+    {
+      "username": "utilisateur1",
+      "password": "motdepasse1",
+      "state": "admin"
+    }
+  ]
+}

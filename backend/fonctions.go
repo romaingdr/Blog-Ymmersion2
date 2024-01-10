@@ -106,3 +106,30 @@ func GetRandomArticles(jsonData JSONData) []Article {
 	})
 	return allArticles[:10]
 }
+
+func GetAccountState(username string) string {
+	file, _ := ioutil.ReadFile("accounts.json")
+
+	var accounts Accounts
+	json.Unmarshal(file, &accounts)
+
+	for _, account := range accounts.Comptes {
+		if account.Username == username {
+			return account.State
+		}
+	}
+
+	return ""
+}
+
+func SetSession(session Session) {
+	GlobalSession = session
+}
+
+func GetSession() Session {
+	return GlobalSession
+}
+
+func ClearSession() {
+	GlobalSession = Session{}
+}

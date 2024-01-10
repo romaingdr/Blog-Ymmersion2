@@ -1,5 +1,4 @@
 {{define "admin"}}
-<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -44,8 +43,19 @@
                                 </path>
                             </g>
                         </svg>
-                        <input class="input" type="search" placeholder="Search" />
+                        <form action="/result" method="get">
+                            <input class="input" type="search" name="content" placeholder="Rechercher" />
+                        </form>
                     </div>
+                </div>
+                <div class="bouton-navbar">
+                    <ul>
+                        <li><a> Compte</a>
+                            <ul>
+                                <li><a href="/deconnexion">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="barre-header">
