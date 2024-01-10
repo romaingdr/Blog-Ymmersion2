@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Administration</title>
-    <link href="/static/css/header-admin.css" rel="stylesheet">
-    <link href="/static/css/admin.css" rel="stylesheet">
+    <link href="http://localhost:8080/static/css/header-admin.css" rel="stylesheet">
+    <link href="http://localhost:8080/static/css/admin.css" rel="stylesheet">
     <script>
         function confirmDelete() {
             return confirm("Êtes-vous sûr de vouloir supprimer cet article ?");
@@ -32,7 +32,8 @@
                     </ul>
                 </div>
                 <div class="logo-navbar">
-                    <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
+                    <img src="http://localhost:8080/static/images/Image-impotante/octo.png" alt="" width="120px"
+                        height="50px">
                 </div>
                 <div class="recherche">
                     <div class="group">
@@ -50,24 +51,41 @@
             <div class="barre-header">
             </div>
         </header>
-        <h1>Page d'administration</h1>
+        <section class="categorie-global">
+            <div class="nom-categorie">
+                <h1 class="nom">PAGE D'ADMINISTRATION</h1>
+            </div>
+            {{range .Categories}}
+            <div class="titre-categorie">
+                {{ .Name }}
+            </div>
+            <div class="articles-categorie">
+                {{ range .Articles }}
+                <div class="articles">
+                    <div class="image-titre">
+                        <div class="img-article">
+                            <img src="http://localhost:8080/static/images/{{ .Image }}" alt="{{ .Titre }}">
+                        </div>
+                        <div>
+                            <div class="titre-article">
+                                <h1>{{ .Titre }}</h1>
+                                <p>Auteur : {{.Auteur}} </p>
+                                <p>Date : {{.Date}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="supp">
+                        <form action="/delete" method="post" onsubmit="return confirmDelete()">
+                            <input type="submit" class="delete-button" value="">
+                        </form>
 
-        {{range .Categories}}
-        <h2>{{.Name}}</h2>
-        <ul>
-            {{range .Articles}}
-            <li>
-                <h3>{{.Titre}}</h3>
-                <p>{{.Intro}}</p>
-                <p>Auteur : {{.Auteur}} | Date : {{.Date}}</p>
-                <form action="/delete" method="post" onsubmit="return confirmDelete()">
-                    <input type="hidden" name="article_id" value="{{.Id}}">
-                    <input type="submit" value="Supprimer">
-                </form>
-            </li>
+
+                    </div>
+                </div>
+                {{ end }}
+            </div>
             {{end}}
-        </ul>
-        {{end}}
+        </section>
         <div>
             <div class="footer">
                 <div class="Produit-par">
@@ -82,7 +100,8 @@
                     </div>
                 </div>
                 <div class="logo-footer">
-                    <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
+                    <img src="http://localhost:8080/static/images/Image-impotante/logo.png" alt="" width="50px"
+                        height="50px">
                 </div>
                 <div class="liens-footer">
                     <a href="">

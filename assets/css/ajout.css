@@ -16,36 +16,11 @@ body {
     justify-content: flex-end;
 }
 
-.articles {
-    width: 100%;
+.nom-categorie {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 25px;
 }
 
-.articles > ul {
-    margin: 2%;
-    list-style-type: none; 
-}
-
-.articles > li {
-    display: flex;
-    flex-direction: column;
-}
-
-
-#title {
-    text-decoration: none;
-}
-
-
-#description {
-    display: flex;
-    flex-direction: row;
-    gap: 2%;
-}
-
-#textu {
-    display: flex;
-    flex-direction: column;
-    gap: 5%;
-}
