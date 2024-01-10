@@ -64,10 +64,10 @@
         </header>
         <section class="categorie-global">
             <div class="nom-categorie">
-                <h1 class="nom">{{.Name}}</h1>
+                <h1 class="nom">{{.Categorie.Name}}</h1>
             </div>
             <div class="articles-categorie">
-                {{ range .Articles }}
+                {{ range  .Categorie.Articles }}
                 <a href="/article?id={{ .Id }}" style="text-decoration:none">
                     <div class="articles">
                         <div class="img-article">
