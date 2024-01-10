@@ -27,6 +27,7 @@ type Account struct {
 	Password string `json:"password"`
 	Email    string `json:"email"`
 	State    string `json:"state"`
+	Salt     string `json:"salt"`
 }
 
 type Accounts struct {

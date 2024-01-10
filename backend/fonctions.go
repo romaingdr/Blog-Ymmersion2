@@ -1,6 +1,8 @@
 package backend
 
 import (
+	"crypto/sha256"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -150,11 +152,15 @@ func AddAccountToFile(account AccountCreation, filePath string) error {
 		return fmt.Errorf("Erreur lors du parsing du JSON : %v", err)
 	}
 
+	salt, err := GenerateSalt()
+	hashedPassword := HashPassword(account.Password, salt)
+
 	newAccount := map[string]interface{}{
 		"username": account.Username,
 		"email":    account.Email,
-		"password": account.Password,
+		"password": hashedPassword,
 		"state":    "admin",
+		"salt":     salt,
 	}
 
 	accounts, ok := data["comptes"]
@@ -204,4 +210,19 @@ func GetEmailsFromJSON(filePath string) []string {
 	}
 
 	return emails
+}
+
+func GenerateSalt() (string, error) {
+	salt := make([]byte, 16)
+	_, err := rand.Read(salt)
+	if err != nil {
+		return "", err
+	}
+	return base64.URLEncoding.EncodeToString(salt), nil
+}
+
+func HashPassword(password string, salt string) string {
+	hasher := sha256.New()
+	hasher.Write([]byte(password + salt))
+	return base64.URLEncoding.EncodeToString(hasher.Sum(nil))
 }

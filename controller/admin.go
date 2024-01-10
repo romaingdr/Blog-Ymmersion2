@@ -100,26 +100,18 @@ func GetCreds(w http.ResponseWriter, r *http.Request) {
 	mail := r.Form.Get("email")
 	password := r.Form.Get("password")
 
-	file, err := ioutil.ReadFile("accounts.json")
-	if err != nil {
-		fmt.Println("Erreur de lecture du fichier JSON :", err)
-		http.Redirect(w, r, "/login?error=Erreur de lecture du fichier JSON", http.StatusSeeOther)
-		return
-	}
+	file, _ := ioutil.ReadFile("accounts.json")
 
 	var accounts backend.Accounts
-	err = json.Unmarshal(file, &accounts)
-	if err != nil {
-		fmt.Println("Erreur lors de la conversion du JSON :", err)
-		http.Redirect(w, r, "/login?error=Erreur lors de la conversion du JSON", http.StatusSeeOther)
-		return
-	}
+	json.Unmarshal(file, &accounts)
 
 	valid := false
 	for _, account := range accounts.Comptes {
-		if account.Email == mail && account.Password == password {
-			valid = true
-			break
+		if account.Email == mail {
+			if backend.HashPassword(password, account.Salt) == account.Password {
+				valid = true
+				break
+			}
 		}
 	}
 

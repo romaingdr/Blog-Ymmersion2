@@ -1,10 +1,11 @@
 {
   "comptes": [
     {
-      "email": "test@gmail.com",
-      "password": "motdepasse1",
+      "email": "testuser@gmail.com",
+      "password": "9JMqTXfs_P4UCMhnFskEYgEkXxkeZLajmguidDDI6-4=",
+      "salt": "zOHspaUpajULcfHyjxRERQ==",
       "state": "admin",
-      "username": "utilisateur1"
+      "username": "testuser"
     }
   ]
 }
