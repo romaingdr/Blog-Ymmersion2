@@ -31,7 +31,7 @@
                     </ul>
                 </div>
                 <div class="logo-navbar">
-                    <img src="http://localhost:8080/static/images/Image-impotante/octo.png" alt="" width="120px" height="50px">
+                    <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
                 </div>
                 <div class="recherche">
                     <div class="group">
@@ -62,23 +62,26 @@
             <div class="barre-header"></div>
         </header>
 
-        <section class="categorie-global">
-            <div class="nom-categorie">
-                <h1 class="nom">Articles Récents</h1>
-            </div>
-            <div class="articles-categorie">
+        <section class="articles">
+            <h1>Articles Récents</h1>
+            <ul>
                 {{ range .Articles }}
-                <a href="/article?id={{ .Id }}" style="text-decoration:none">
-                    <div class="articles">
-                        <div class="img-article">
-                            <img src="http://localhost:8080/static/images/{{ .Image }}" alt="{{ .Titre }}">
-                        </div>
-                        <div class="titre-article">
-                            <h1>{{ .Titre }}</h1>
+                <li>
+                    <div id="title"></div>
+                    <div id="description">
+                        <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
+                        <div id="textu">
+                            <h1 style="text-transform:uppercase">{{ .Titre }}</h1>
+                            <div>
+                                <a href="/article?id={{ .Id }}">
+                                    <span>Voir plus</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </a>
+                </li>
                 {{ end }}
+            </ul>
         </section>
 
         <footer>
@@ -95,7 +98,7 @@
                     </div>
                 </div>
                 <div class="logo-footer">
-                    <img src="http://localhost:8080/static/images/Image-impotante/logo.png" alt="" width="50px" height="50px">
+                    <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
                 </div>
                 <div class="liens-footer">
                     <a href="">
@@ -112,6 +115,5 @@
         </footer>
     </div>
 </body>
-
 </html>
 {{end}}

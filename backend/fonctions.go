@@ -133,3 +133,75 @@ func GetSession() Session {
 func ClearSession() {
 	GlobalSession = Session{}
 }
+
+func ClearAccount() {
+	GlobalAccount = AccountCreation{}
+}
+
+func AddAccountToFile(account AccountCreation, filePath string) error {
+	jsonFile, err := ioutil.ReadFile(filePath)
+	if err != nil {
+		return fmt.Errorf("Erreur lors de la lecture du fichier JSON : %v", err)
+	}
+
+	var data map[string][]map[string]interface{}
+	err = json.Unmarshal(jsonFile, &data)
+	if err != nil {
+		return fmt.Errorf("Erreur lors du parsing du JSON : %v", err)
+	}
+
+	newAccount := map[string]interface{}{
+		"username": account.Username,
+		"email":    account.Email,
+		"password": account.Password,
+		"state":    "admin",
+	}
+
+	accounts, ok := data["comptes"]
+	if !ok {
+		accounts = make([]map[string]interface{}, 0)
+	}
+	data["comptes"] = append(accounts, newAccount)
+
+	newJSON, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		return fmt.Errorf("Erreur lors de la conversion en JSON : %v", err)
+	}
+
+	err = ioutil.WriteFile(filePath, newJSON, 0644)
+	if err != nil {
+		return fmt.Errorf("Erreur lors de l'écriture dans le fichier JSON : %v", err)
+	}
+
+	return nil
+}
+
+func GetUsernameByEmail(emailToFind string) string {
+	jsonFile, _ := ioutil.ReadFile("accounts.json")
+
+	var data Accounts
+	json.Unmarshal(jsonFile, &data)
+
+	for _, account := range data.Comptes {
+		if account.Email == emailToFind {
+			return account.Username
+		}
+	}
+
+	return ""
+}
+
+func GetEmailsFromJSON(filePath string) []string {
+	fileContent, _ := ioutil.ReadFile(filePath)
+
+	var comptes Accounts
+
+	json.Unmarshal(fileContent, &comptes)
+
+	var emails []string
+	for _, compte := range comptes.Comptes {
+		emails = append(emails, compte.Email)
+	}
+
+	return emails
+}

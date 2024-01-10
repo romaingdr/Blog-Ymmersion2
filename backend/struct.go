@@ -1,6 +1,7 @@
 package backend
 
 var GlobalSession Session
+var GlobalAccount AccountCreation
 
 type Categorie struct {
 	Name     string    `json:"name"`
@@ -24,6 +25,7 @@ type Article struct {
 type Account struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
+	Email    string `json:"email"`
 	State    string `json:"state"`
 }
 
@@ -31,9 +33,14 @@ type Accounts struct {
 	Comptes []Account `json:"comptes"`
 }
 
+type AccountsCreation struct {
+	Comptes []AccountCreation `json:"comptes"`
+}
+
 type Session struct {
 	Username string
 	State    string
+	Mail     string
 }
 
 type IndexData struct {
@@ -53,4 +60,16 @@ type ArticleData struct {
 
 type LoginStatus struct {
 	IsLoggedIn bool
+}
+
+type AccountCreation struct {
+	Username string `json:"username"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
+	MailCode string
+}
+
+type MailCodeData struct {
+	Success bool
+	Message string
 }

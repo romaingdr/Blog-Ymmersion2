@@ -1,9 +1,10 @@
 {
   "comptes": [
     {
-      "username": "utilisateur1",
+      "email": "test@gmail.com",
       "password": "motdepasse1",
-      "state": "admin"
+      "state": "admin",
+      "username": "utilisateur1"
     }
   ]
 }

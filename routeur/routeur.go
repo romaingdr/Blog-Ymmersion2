@@ -24,6 +24,9 @@ func Initserv() {
 	http.HandleFunc("/login", controller.LoginPage)
 	http.HandleFunc("/login_credits", controller.GetCreds)
 	http.HandleFunc("/deconnexion", controller.Deconnexion)
+	http.HandleFunc("/mail_verif", controller.MailVerifPage)
+	http.HandleFunc("/verifycode", controller.VerifCode)
+	http.HandleFunc("/success_code", controller.SuccessPage)
 
 	http.HandleFunc("/", controller.DefaultHandler)
 

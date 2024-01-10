@@ -219,3 +219,7 @@ func Mentions(w http.ResponseWriter, r *http.Request) {
 
 	templates.Temp.ExecuteTemplate(w, "mentions", data)
 }
+
+func AddAccountPage(w http.ResponseWriter, r *http.Request) {
+	templates.Temp.ExecuteTemplate(w, "create_account", nil)
+}
