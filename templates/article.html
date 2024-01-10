@@ -1,10 +1,9 @@
 {{define "article"}}
-<!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <title>{{.Article.Titre}}</title>
+    <title>{{.Data.Article.Titre}}</title>
     <link href="/static/css/header.css" rel="stylesheet">
     <link href="/static/css/article.css" rel="stylesheet">
 </head>
@@ -22,8 +21,11 @@
                             <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                         </ul>
                     </li>
-                    <li><a href="/admin">Admin
-                        </a></li>
+                    {{if .IsLoggedIn}}
+                    <li><a href="/admin">Admin</a></li>
+                    {{else}}
+                    <li><a href="/login">Se connecter</a></li>
+                    {{end}}
                 </ul>
             </div>
             <div class="logo-navbar">
@@ -43,19 +45,30 @@
                     </form>
                 </div>
             </div>
+            {{if .IsLoggedIn}}
+            <div class="bouton-navbar">
+                <ul>
+                    <li><a> Compte</a>
+                        <ul>
+                            <li><a href="/deconnexion">Déconnexion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            {{end}}
         </div>
         <div class="barre-header">
         </div>
     </header>
     <section class="articles">
-        <h1>{{.Article.Titre}}</h1>
-        <img src="/static/images/{{.Article.Image}}" alt="Image de l'article">
-        <p>Introduction: {{.Article.Intro}}</p>
-        <p>Auteur: {{.Article.Auteur}}</p>
-        <p>Date: {{.Article.Date}}</p>
+        <h1>{{.Data.Article.Titre}}</h1>
+        <img src="/static/images/{{.Data.Article.Image}}" alt="Image de l'article">
+        <p>Introduction: {{.Data.Article.Intro}}</p>
+        <p>Auteur: {{.Data.Article.Auteur}}</p>
+        <p>Date: {{.Data.Article.Date}}</p>
         <div>
             <p>Corps: </p>
-            <p>{{.Article.Body}}</p>
+            <p>{{.Data.Article.Body}}</p>
         </div>
     </section>
     <footer>

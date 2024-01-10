@@ -15,6 +15,7 @@ import (
 )
 
 func ArticlePage(w http.ResponseWriter, r *http.Request) {
+	session := backend.GetSession().State == "admin"
 	queryID := r.URL.Query().Get("id")
 	articleID, err := strconv.Atoi(queryID)
 	if err != nil {
@@ -48,10 +49,16 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 		"Article": foundArticle,
 	}
 
-	templates.Temp.ExecuteTemplate(w, "article", data)
+	articleData := backend.ArticleData{
+		IsLoggedIn: session,
+		Data:       data,
+	}
+
+	templates.Temp.ExecuteTemplate(w, "article", articleData)
 }
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {
+	session := backend.GetSession().State == "admin"
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
 		fmt.Println("Erreur dans la lecture du json : ", err)
@@ -65,10 +72,17 @@ func IndexPage(w http.ResponseWriter, r *http.Request) {
 	}
 
 	randomArticles := backend.GetRandomArticles(result)
-	templates.Temp.ExecuteTemplate(w, "index", randomArticles)
+
+	data := backend.IndexData{
+		Articles:   randomArticles,
+		IsLoggedIn: session,
+	}
+
+	templates.Temp.ExecuteTemplate(w, "index", data)
 }
 
 func CategoriePage(w http.ResponseWriter, r *http.Request) {
+	session := backend.GetSession().State == "admin"
 
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
@@ -85,7 +99,6 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 	var Data backend.Categorie
 
 	urlStr := r.URL.RawQuery
-	fmt.Println(urlStr)
 	switch urlStr {
 	case "categorie=esport":
 		Data = result.Categories[0]
@@ -97,12 +110,16 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 		templates.Temp.ExecuteTemplate(w, "erreur", nil)
 	}
 
-	fmt.Println(Data)
+	categorieData := backend.CategorieData{
+		IsLoggedIn: session,
+		Categorie:  Data,
+	}
 
-	templates.Temp.ExecuteTemplate(w, "categorie", Data)
+	templates.Temp.ExecuteTemplate(w, "categorie", categorieData)
 }
 
 func ResultPage(w http.ResponseWriter, r *http.Request) {
+	session := backend.GetSession().State == "admin"
 	recherche := r.URL.Query().Get("content")
 	var jsonData backend.JSONData
 
@@ -128,7 +145,12 @@ func ResultPage(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	templates.Temp.ExecuteTemplate(w, "result", resultArticles)
+	data := backend.IndexData{
+		Articles:   resultArticles,
+		IsLoggedIn: session,
+	}
+
+	templates.Temp.ExecuteTemplate(w, "result", data)
 }
 
 func RecuDatas(w http.ResponseWriter, r *http.Request) {
@@ -190,8 +212,10 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 	ioutil.WriteFile("blog.json", updatedData, 0644)
 
 	http.Redirect(w, r, "/new_article", http.StatusSeeOther)
-} // Route /new_article
+}
 
 func Mentions(w http.ResponseWriter, r *http.Request) {
-	templates.Temp.ExecuteTemplate(w, "mentions", nil)
+	data := backend.LoginStatus{IsLoggedIn: backend.GetSession().State == "admin"}
+
+	templates.Temp.ExecuteTemplate(w, "mentions", data)
 }

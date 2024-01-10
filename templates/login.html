@@ -1,0 +1,23 @@
+{{define "login"}}
+<html lang="en">
+<head>
+    <title>Page de Login</title>
+</head>
+<body>
+
+<h2>Page de Login</h2>
+
+{{if ne . ""}}
+    <p style="color:red">{{.}}</p>
+{{end}}
+<form action="/login_credits" method="post">
+    <label for="username">Identifiant :</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Mot de passe :</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Se connecter">
+</form>
+
+</body>
+</html>
+{{end}}
