@@ -12,12 +12,12 @@
     <div class="wrapper">
         <div class="card-switch">
             <label class="switch">
-                <div class="flip-cardinner">
-                    <div class="flip-cardfront">
-                        <div class="title">Vérification code e-mail</div>
-                        <form action="" class="flip-cardform">
-                            <input type="text" placeholder="Code" id="verificationCode" name="verificationCode" class="flip-cardinput" required>
-                            <button class="flip-card__btn">Envoyer !</button>
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="title">Vérification e-mail</div>
+                        <form action="/login_credits" class="flip-card__form" method="post">
+                            <input type="text" placeholder="Code de vérification" name="verificationCode" class="flip-card__input">
+                            <button class="flip-card__btn">Vérifier !</button>
                         </form>
                     </div>
                 </div>

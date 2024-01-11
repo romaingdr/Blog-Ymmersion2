@@ -11,8 +11,15 @@
       "email": "julien.dante@ynov.com",
       "password": "z0jB2Vm2kRAEE5sbbMMqXgZhcXw3Lzs_i1tciz5tbwU=",
       "salt": "O1JL2VzYuVhfTjgqqV2tNA==",
-      "state": "member",
+      "state": "admin",
       "username": "Julienlezozo"
+    },
+    {
+      "email": "kweentinoux@icloud.com",
+      "password": "JpmlRywV_2CNnC9JkT00IzII5bP_7uBwl83hoqt2U3w=",
+      "salt": "uXOckieSCgtQ2VLLU0GPDA==",
+      "state": "admin",
+      "username": "kantin"
     }
   ]
 }

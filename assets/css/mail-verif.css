@@ -29,28 +29,6 @@ body {
     height: 20px;
 }
 
-.card-side::before {
-    position: absolute;
-    content: 'Se Connecter';
-    left: -105px;
-    top: 0;
-    width: 100px;
-    text-decoration: underline;
-    color: var(--font-color);
-    font-weight: 600;
-}
-
-.card-side::after {
-    position: absolute;
-    content: 'Créer un compte';
-    left: 65px;
-    bottom: -10px;
-    width: 100px;
-    text-decoration: none;
-    color: var(--font-color);
-    font-weight: 600;
-}
-
 .toggle {
     opacity: 0;
     width: 0;
