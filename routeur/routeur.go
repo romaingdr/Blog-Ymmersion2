@@ -21,11 +21,17 @@ func Initserv() {
 	http.HandleFunc("/submit", controller.RecuDatas)
 	http.HandleFunc("/delete", controller.DeletePage)
 	http.HandleFunc("/mentions_legales", controller.Mentions)
+	http.HandleFunc("/login", controller.LoginPage)
+	http.HandleFunc("/login_credits", controller.GetCreds)
+	http.HandleFunc("/deconnexion", controller.Deconnexion)
+	http.HandleFunc("/mail_verif", controller.MailVerifPage)
+	http.HandleFunc("/verifycode", controller.VerifCode)
+	http.HandleFunc("/success_code", controller.SuccessPage)
 
 	http.HandleFunc("/", controller.DefaultHandler)
 
 	// Démarrage du serveur
 	log.Println("[✅] Serveur lancé !")
-	fmt.Println("[🌐] http://localhost:8080/admin")
+	fmt.Println("[🌐] http://localhost:8080/accueil")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

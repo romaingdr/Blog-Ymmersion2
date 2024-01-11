@@ -1,0 +1,11 @@
+{
+  "comptes": [
+    {
+      "email": "testuser@gmail.com",
+      "password": "9JMqTXfs_P4UCMhnFskEYgEkXxkeZLajmguidDDI6-4=",
+      "salt": "zOHspaUpajULcfHyjxRERQ==",
+      "state": "admin",
+      "username": "testuser"
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 {{define "index"}}
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,8 +23,11 @@
                                 <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                             </ul>
                         </li>
-                        <li><a href="/admin">Admin
-                            </a></li>
+                        {{if .IsLoggedIn}}
+                        <li><a href="/admin">Admin</a></li>
+                        {{else}}
+                        <li><a href="/login">Se connecter</a></li>
+                        {{end}}
                     </ul>
                 </div>
                 <div class="logo-navbar">
@@ -40,9 +42,22 @@
                                 </path>
                             </g>
                         </svg>
-                        <input class="input" type="search" placeholder="Search" />
+                        <form action="/result" method="get">
+                            <input class="input" type="search" name="content" placeholder="Rechercher" />
+                        </form>
                     </div>
                 </div>
+                {{if .IsLoggedIn}}
+                <div class="bouton-navbar">
+                    <ul>
+                        <li><a> Compte</a>
+                            <ul>
+                                <li><a href="/deconnexion">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                {{end}}
             </div>
             <div class="barre-header"></div>
         </header>
@@ -50,7 +65,7 @@
         <section class="articles">
             <h1>Articles Récents</h1>
             <ul>
-                {{ range . }}
+                {{ range .Articles }}
                 <li>
                     <a href="/article?id={{ .Id }}">
                         <div class="img-article">
@@ -97,6 +112,5 @@
         </footer>
     </div>
 </body>
-
 </html>
 {{end}}

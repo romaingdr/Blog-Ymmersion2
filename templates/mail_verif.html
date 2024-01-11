@@ -1,0 +1,18 @@
+{{define "mailverif"}}
+<html>
+<head>
+    <title>Vérification du code</title>
+</head>
+<body>
+<h1>Vérification du code</h1>
+{{ if not .Success }}
+<p style="color: red;">{{ .Message }}</p>
+{{ end }}
+<form action="/verifycode" method="post">
+    <label for="verificationCode">Entrez le code de vérification reçu par e-mail :</label><br>
+    <input type="text" id="verificationCode" name="verificationCode" required><br><br>
+    <input type="submit" value="Vérifier le code">
+</form>
+</body>
+</html>
+{{end}}

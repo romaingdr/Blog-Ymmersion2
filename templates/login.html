@@ -1,0 +1,45 @@
+{{define "login"}}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="http://localhost:8080/static/css/login.css">
+</head>
+
+<body>
+<form action="/login_credits" method="post">
+    <div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+                <input class="toggle" type="checkbox">
+                <span class="slider"></span>
+                <span class="card-side"></span>
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="title">Se Connecter</div>
+                        <form action="/login_credits" class="flip-card__form" method="post">
+                            <input type="email" placeholder="email@exemple.com" name="email" class="flip-card__input">
+                            <input type="password" placeholder="Mot De Passe" name="password" class="flip-card__input">
+                            <button class="flip-card__btn">Let`s go!</button>
+                        </form>
+                    </div>
+                    <div class="flip-card__back">
+                        <div class="title">Créer un compte</div>
+                        <form action="/mail_verif" class="flip-card__form" method="post">
+                            <input type="name" placeholder="Nom d'utilisateur" name="username" class="flip-card__input">
+                            <input type="email" placeholder="email@exemple.com" name="email" class="flip-card__input">
+                            <input type="password" placeholder="Mot De Passe" name="password" class="flip-card__input">
+                            <button class="flip-card__btn">Confirm !</button>
+                        </form>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+</form>
+</body>
+
+</html>
+{{end}}

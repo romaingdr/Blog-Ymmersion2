@@ -22,8 +22,11 @@
                             <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                         </ul>
                     </li>
-                    <li><a href="/admin">Admin
-                        </a></li>
+                    {{if .IsLoggedIn}}
+                    <li><a href="/admin">Admin</a></li>
+                    {{else}}
+                    <li><a href="/login">Se connecter</a></li>
+                    {{end}}
                 </ul>
             </div>
             <div class="logo-navbar">
@@ -43,6 +46,17 @@
                     </form>
                 </div>
             </div>
+            {{if .IsLoggedIn}}
+            <div class="bouton-navbar">
+                <ul>
+                    <li><a> Compte</a>
+                        <ul>
+                            <li><a href="/deconnexion">Déconnexion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            {{end}}
         </div>
         <div class="barre-header">
         </div>
@@ -50,7 +64,7 @@
     <div class="resultats">
         <h1>Résultats de la recherche</h1>
         <ul>
-            {{ range . }}
+            {{ range .Articles }}
             <li>
                 <div id="title">
 
