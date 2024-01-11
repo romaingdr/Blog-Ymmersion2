@@ -92,7 +92,7 @@
         {
           "id": 2001,
           "titre": "L'annonce surprise d'un nouvel opus pour la franchise légendaire",
-          "image": "default.png",
+          "image": "2001.png",
           "introduction": "Plongez dans les détails de la dernière annonce d'un nouvel opus d'une franchise bien-aimée.",
           "auteur": "Marc Dupont",
           "date": "2024-01-09",
@@ -101,7 +101,7 @@
         {
           "id": 2002,
           "titre": "Analyse des avancées technologiques dans les prochains jeux AAA",
-          "image": "default.png",
+          "image": "2002.png",
           "introduction": "Explorez les technologies de pointe intégrées dans les prochains titres phares du monde du jeu vidéo.",
           "auteur": "Sophie Rousseau",
           "date": "2024-01-08",
@@ -110,7 +110,7 @@
         {
           "id": 2003,
           "titre": "La révolution des jeux indépendants : Innovation et créativité",
-          "image": "default.png",
+          "image": "2003.png",
           "introduction": "Découvrez comment les jeux indépendants redéfinissent l'industrie et apportent des expériences uniques.",
           "auteur": "Lucas Martin",
           "date": "2024-01-07",
@@ -119,7 +119,7 @@
         {
           "id": 2004,
           "titre": "Les prochaines étapes de la réalité virtuelle dans le monde du gaming",
-          "image": "default.png",
+          "image": "2004.png",
           "introduction": "Analyse des avancées attendues dans l'intégration de la réalité virtuelle dans les jeux vidéo.",
           "auteur": "Eva Dubois",
           "date": "2024-01-06",
@@ -128,7 +128,7 @@
         {
           "id": 2005,
           "titre": "Les jeux cross-plateformes : Vers une expérience de jeu unifiée",
-          "image": "default.png",
+          "image": "2005.png",
           "introduction": "Exploration de l'essor des jeux permettant de jouer entre différentes plateformes.",
           "auteur": "Alexandre Roy",
           "date": "2024-01-05",
@@ -137,7 +137,7 @@
         {
           "id": 2006,
           "titre": "L'impact des microtransactions sur l'expérience des joueurs",
-          "image": "default.png",
+          "image": "2006.png",
           "introduction": "Analyse des effets des microtransactions sur le jeu et les habitudes de consommation.",
           "auteur": "Clara Gagnon",
           "date": "2024-01-04",
@@ -146,7 +146,7 @@
         {
           "id": 2007,
           "titre": "Le futur des compétitions esportives dans les jeux de combat",
-          "image": "default.png",
+          "image": "2007.png",
           "introduction": "Exploration des perspectives de l'esport dans les jeux de combat compétitifs.",
           "auteur": "Théo Lambert",
           "date": "2024-01-03",
@@ -155,7 +155,7 @@
         {
           "id": 2008,
           "titre": "Les jeux rétro : Renaissance d'une nostalgie vidéoludique",
-          "image": "default.png",
+          "image": "2008.png",
           "introduction": "Découvrez le regain d'intérêt pour les jeux rétro et leur impact sur l'industrie actuelle.",
           "auteur": "Gabriel Fortier",
           "date": "2024-01-02",
@@ -164,7 +164,7 @@
         {
           "id": 2009,
           "titre": "La montée en puissance des jeux de narration : Une expérience immersive",
-          "image": "default.png",
+          "image": "2009.jpeg",
           "introduction": "Exploration du succès croissant des jeux offrant des expériences narratives captivantes.",
           "auteur": "Sophie Lefebvre",
           "date": "2024-01-01",
@@ -173,7 +173,7 @@
         {
           "id": 2010,
           "titre": "L'avenir des jeux en réalité augmentée : Intégration et potentiel",
-          "image": "default.png",
+          "image": "2010.jpg",
           "introduction": "Analyse des perspectives et des innovations attendues dans les jeux en réalité augmentée.",
           "auteur": "Thomas Martin",
           "date": "2023-12-31",

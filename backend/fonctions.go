@@ -124,6 +124,21 @@ func GetAccountState(username string) string {
 	return ""
 }
 
+func GetAccountMail(username string) string {
+	file, _ := ioutil.ReadFile("accounts.json")
+
+	var accounts Accounts
+	json.Unmarshal(file, &accounts)
+
+	for _, account := range accounts.Comptes {
+		if account.Username == username {
+			return account.Email
+		}
+	}
+
+	return ""
+}
+
 func SetSession(session Session) {
 	GlobalSession = session
 }
@@ -229,4 +244,81 @@ func HashPassword(password string, salt string) string {
 	hasher := sha256.New()
 	hasher.Write([]byte(password + salt))
 	return base64.URLEncoding.EncodeToString(hasher.Sum(nil))
+}
+
+func CheckRememberStatus(filename string) (bool, string) {
+	content, err := ioutil.ReadFile(filename)
+	if err != nil {
+		fmt.Println("Erreur lors de la lecture du fichier:", err)
+		return false, ""
+	}
+
+	var data RememberData
+	err = json.Unmarshal(content, &data)
+	if err != nil {
+		fmt.Println("Erreur lors de la lecture du JSON:", err)
+		return false, ""
+	}
+
+	if data.Remember.Active == "True" {
+		return true, data.Remember.Username
+	}
+
+	return false, ""
+}
+
+func SetRememberActive(username string, filename string) error {
+	content, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return fmt.Errorf("Erreur lors de la lecture du fichier : %v", err)
+	}
+
+	var data RememberData
+	err = json.Unmarshal(content, &data)
+	if err != nil {
+		return fmt.Errorf("Erreur lors de la lecture du JSON : %v", err)
+	}
+
+	data.Remember.Active = "True"
+	data.Remember.Username = username
+
+	newContent, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		return fmt.Errorf("Erreur lors de la création du nouveau contenu JSON : %v", err)
+	}
+
+	err = ioutil.WriteFile(filename, newContent, 0644)
+	if err != nil {
+		return fmt.Errorf("Erreur lors de l'écriture dans le fichier : %v", err)
+	}
+
+	return nil
+}
+
+func ClearRemember(filename string) error {
+	content, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return fmt.Errorf("Erreur lors de la lecture du fichier : %v", err)
+	}
+
+	var data RememberData
+	err = json.Unmarshal(content, &data)
+	if err != nil {
+		return fmt.Errorf("Erreur lors de la lecture du JSON : %v", err)
+	}
+
+	data.Remember.Active = "False"
+	data.Remember.Username = ""
+
+	newContent, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		return fmt.Errorf("Erreur lors de la création du nouveau contenu JSON : %v", err)
+	}
+
+	err = ioutil.WriteFile(filename, newContent, 0644)
+	if err != nil {
+		return fmt.Errorf("Erreur lors de l'écriture dans le fichier : %v", err)
+	}
+
+	return nil
 }

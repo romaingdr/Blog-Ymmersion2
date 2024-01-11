@@ -99,6 +99,7 @@ func GetCreds(w http.ResponseWriter, r *http.Request) {
 
 	mail := r.Form.Get("email")
 	password := r.Form.Get("password")
+	remember := r.FormValue("remember")
 
 	file, _ := ioutil.ReadFile("accounts.json")
 
@@ -118,6 +119,9 @@ func GetCreds(w http.ResponseWriter, r *http.Request) {
 	if valid {
 		username := backend.GetUsernameByEmail(mail)
 		session := backend.Session{Username: username, State: backend.GetAccountState(username), Mail: mail}
+		if remember == "on" {
+			backend.SetRememberActive(username, "rememberSession.json")
+		}
 		fmt.Println(session)
 		backend.SetSession(session)
 		http.Redirect(w, r, "/accueil", http.StatusSeeOther)
@@ -129,6 +133,7 @@ func GetCreds(w http.ResponseWriter, r *http.Request) {
 
 func Deconnexion(w http.ResponseWriter, r *http.Request) {
 	backend.ClearSession()
+	backend.ClearRemember("rememberSession.json")
 	http.Redirect(w, r, "/accueil", http.StatusSeeOther)
 }
 
