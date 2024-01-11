@@ -52,19 +52,14 @@
             <ul>
                 {{ range . }}
                 <li>
-                    <div id="title">
-
-                    </div>
-                    <div id="description">
-                        <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
-                        <div id="textu">
-                            <h1 style="text-transform:uppercase">{{ .Titre }}</h1>
-                            <div>
-                                <a href="/article?id={{ .Id }}">
-                                    <span>Voir plus</span>
-                                </a>
-                            </div>
+                    <a href="/article?id={{ .Id }}">
+                        <div class="img-article">
+                            <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
                         </div>
+                        <div id="textu">
+                            <h1 style="text-decoration:none" class="titre-article">{{ .Titre }}</h1>
+                        </div>
+                    </a>
                     </div>
                 </li>
                 {{ end }}

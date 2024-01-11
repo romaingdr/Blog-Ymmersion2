@@ -48,26 +48,24 @@
             <div class="barre-header">
             </div>
         </header>
-        <div>
-            <h2 class="nom">{{.Name}}</h2>
-            {{ range .Articles }}
-            <li>
-                <div id="title">
-
-                </div>
-                <div id="description">
-                    <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
-                    <div id="textu">
-                        <h1 style="text-transform:uppercase">{{ .Titre }}</h1>
-                        <div>
-                            <a href="/article?id={{ .Id }}">
-                                <span>Voir plus</span>
-                            </a>
+        <div class="categorie-global">
+            <div class="titre-categorie">
+                <h2 class="nom">{{.Name}}</h2>
+            </div>
+            <div id="description">
+                {{ range .Articles }}
+                <div class="article-all">
+                    <a href="/article?id={{ .Id }}">
+                        <div class="img-article">
+                            <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
                         </div>
-                    </div>
+                        <div id="textu">
+                            <h1 style="text-decoration:none" class="titre-article">{{ .Titre }}</h1>
+                        </div>
+                    </a>
                 </div>
-            </li>
-            {{ end }}
+                {{ end }}
+            </div>
         </div>
         <footer>
             <div class="footer">
