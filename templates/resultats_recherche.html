@@ -10,111 +10,109 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="bouton-navbar">
-                <ul>
-                    <li><a href="/accueil">Accueil</a></li>
-                    <li><a> Catégories</a>
-                        <ul>
-                            <li><a href="/categorie?categorie=nouveautes">Nouveauté</a></li>
-                            <li><a href="/categorie?categorie=esport">E-Sport</a></li>
-                            <li><a href="/categorie?categorie=presentations">Présentation</a></li>
-                        </ul>
-                    </li>
-                    {{if .AsAdmin}}
-                    <li><a href="/admin">Admin</a></li>
-                    {{else}}
-                    {{if not .IsLoggedIn}}
-                    <li><a href="/login">Se connecter</a></li>
-                    {{end}}
-                    {{end}}
-                </ul>
-            </div>
-            <div class="logo-navbar">
-                <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
-            </div>
-            <div class="recherche">
-                <div class="group">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-                        <g>
-                            <path
-                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                            </path>
-                        </g>
-                    </svg>
-                    <form action="/result" method="get">
-                        <input class="input" type="search" name="content" placeholder="Rechercher" />
-                    </form>
+    <div class="elle-casse-tout">
+        <header>
+            <div class="navbar">
+                <div class="bouton-navbar">
+                    <ul>
+                        <li><a href="/accueil">Accueil</a></li>
+                        <li><a> Catégories</a>
+                            <ul>
+                                <li><a href="/categorie?categorie=nouveautes">Nouveauté</a></li>
+                                <li><a href="/categorie?categorie=esport">E-Sport</a></li>
+                                <li><a href="/categorie?categorie=presentations">Présentation</a></li>
+                            </ul>
+                        </li>
+                        {{if .AsAdmin}}
+                        <li><a href="/admin">Admin</a></li>
+                        {{else}}
+                        {{if not .IsLoggedIn}}
+                        <li><a href="/login">Se connecter</a></li>
+                        {{end}}
+                        {{end}}
+                    </ul>
                 </div>
-            </div>
-            {{if .IsLoggedIn}}
-            <div class="bouton-navbar">
-                <ul>
-                    <li><a> Compte</a>
-                        <ul>
-                            <li><a href="/deconnexion">Déconnexion</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            {{end}}
-        </div>
-        <div class="barre-header">
-        </div>
-    </header>
-    <div class="resultats">
-        <h1>Résultats de la recherche</h1>
-        <ul>
-            {{ range .Articles }}
-            <li>
-                <div id="title">
-
+                <div class="logo-navbar">
+                    <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
                 </div>
-                <div id="description">
-                    <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
-                    <div id="textu">
-                        <h1 style="text-transform:uppercase">{{ .Titre }}</h1>
-                        <div>
-                            <a href="/article?id={{ .Id }}">
-                                <span>Voir plus</span>
-                            </a>
-                        </div>
+                <div class="recherche">
+                    <div class="group">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+                            <g>
+                                <path
+                                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                                </path>
+                            </g>
+                        </svg>
+                        <form action="/result" method="get">
+                            <input class="input" type="search" name="content" placeholder="Rechercher" />
+                        </form>
                     </div>
                 </div>
-            </li>
-            {{ end }}
-        </ul>
+                {{if .IsLoggedIn}}
+                <div class="bouton-navbar">
+                    <ul>
+                        <li><a> Compte</a>
+                            <ul>
+                                <li><a href="/deconnexion">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                {{end}}
+            </div>
+            <div class="barre-header">
+            </div>
+        </header>
+        <section class="categorie-global">
+            <div class="nom-categorie">
+                <h1 class="nom">Résultats</h1>
+            </div>
+            <div class="articles-categorie">
+                {{ range .Articles }}
+                <a href="/article?id={{ .Id }}" style="text-decoration:none">
+                    <div class="articles">
+                        <div class="img-article">
+                            <img src="http://localhost:8080/static/images/{{ .Image }}" alt="{{ .Titre }}">
+                        </div>
+                        <div class="titre-article">
+                            <h1>{{ .Titre }}</h1>
+                        </div>
+                    </div>
+                </a>
+                {{ end }}
+            </div>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="Produit-par">
+                    <div class="titre-footer">
+                        <p>Produit par : </p>
+                    </div>
+                    <div class="perso-footer">
+                        <p>Enzo Carbonara</p>
+                        <p>Romain GOUDERGUES</p>
+                        <p>Fabio VINCENTELLI</p>
+                        <p>Kantin FAGNIART</p>
+                    </div>
+                </div>
+                <div class="logo-footer">
+                    <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
+                </div>
+                <div class="liens-footer">
+                    <a href="/repartition">
+                        Répartition des tâches de l'équipe
+                    </a>
+                    <a href="/explication">
+                        Explication du thème
+                    </a>
+                    <a href="/mentions_legales">
+                        Mentions Légales
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
-    <footer>
-        <div class="footer">
-            <div class="Produit-par">
-                <div class="titre-footer">
-                    <p>Produit par : </p>
-                </div>
-                <div class="perso-footer">
-                    <p>Enzo Carbonara</p>
-                    <p>Romain GOUDERGUES</p>
-                    <p>Fabio VINCENTELLI</p>
-                    <p>Kantin FAGNIART</p>
-                </div>
-            </div>
-            <div class="logo-footer">
-                <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
-            </div>
-            <div class="liens-footer">
-                <a href="/repartition">
-                    Répartition des tâches de l'équipe
-                </a>
-                <a href="/explication">
-                    Explication du thème
-                </a>
-                <a href="/mentions_legales">
-                    Mentions Légales
-                </a>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>

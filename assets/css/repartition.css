@@ -63,33 +63,11 @@ section {
 
 .contenue-element {
     margin-bottom: 10px;
-    width: 50%;
+    width: 82%;
     display: flex;
     justify-content: space-between;
 }
 
 .texte {
     width: 80%;
-}
-
-.contenue-elements {
-    margin-bottom: 25px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
-.li {
-    padding-left: 50px;
-}
-
-.titres {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 20px;
-}
-
-.titres  h2{
-font-size: 25px;
 }

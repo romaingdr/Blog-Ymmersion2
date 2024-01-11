@@ -8,18 +8,11 @@
       "username": "testuser"
     },
     {
-      "email": "julien.dante@ynov.com",
-      "password": "z0jB2Vm2kRAEE5sbbMMqXgZhcXw3Lzs_i1tciz5tbwU=",
-      "salt": "O1JL2VzYuVhfTjgqqV2tNA==",
+      "email": "kantin.fagn@gmail.com",
+      "password": "kBcdaG3Br4PBvy3Ip_uP7pM8pSv90HNcU5HgExCdSj8=",
+      "salt": "_yq-L6btWmD6-9cTWBsPjQ==",
       "state": "admin",
-      "username": "Julienlezozo"
-    },
-    {
-      "email": "loueybarbirou12@gmail.com",
-      "password": "wy4Wrq8mxizkGdI9gXfYCBq0WDOTbTJAp62pVSXFAUM=",
-      "salt": "EQ-sfhSvOpdCxgm9YVNM-g==",
-      "state": "admin",
-      "username": "Lucasbarbirou"
+      "username": "kantin"
     }
   ]
 }

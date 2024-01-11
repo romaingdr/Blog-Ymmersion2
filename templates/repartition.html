@@ -1,122 +1,234 @@
 {{define "repartition"}}
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Organisation de l'équipe rose</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/static/css/header.css">
-    <link rel="stylesheet" href="http://localhost:8080/static/css/mention.css">
+    <link rel="stylesheet" href="http://localhost:8080/static/css/repartition.css">
 </head>
+
 <body>
-<div class="elle-casse-tout">
-<header>
-    <div class="navbar">
-        <div class="bouton-navbar">
-            <ul>
-                <li><a href="/accueil">Accueil</a></li>
-                <li><a> Catégories</a>
+    <div class="elle-casse-tout">
+        <header>
+            <div class="navbar">
+                <div class="bouton-navbar">
                     <ul>
-                        <li><a href="/categorie?categorie=nouveautes">Nouveauté</a></li>
-                        <li><a href="/categorie?categorie=esport">E-Sport</a></li>
-                        <li><a href="/categorie?categorie=presentations">Présentation</a></li>
+                        <li><a href="/accueil">Accueil</a></li>
+                        <li><a> Catégories</a>
+                            <ul>
+                                <li><a href="/categorie?categorie=nouveautes">Nouveauté</a></li>
+                                <li><a href="/categorie?categorie=esport">E-Sport</a></li>
+                                <li><a href="/categorie?categorie=presentations">Présentation</a></li>
+                            </ul>
+                        </li>
+                        {{if .AsAdmin}}
+                        <li><a href="/admin">Admin</a></li>
+                        {{else}}
+                        {{if not .IsLoggedIn}}
+                        <li><a href="/login">Se connecter</a></li>
+                        {{end}}
+                        {{end}}
                     </ul>
-                </li>
-                {{if .AsAdmin}}
-                <li><a href="/admin">Admin</a></li>
-                {{else}}
-                {{if not .IsLoggedIn}}
-                <li><a href="/login">Se connecter</a></li>
-                {{end}}
-                {{end}}
-            </ul>
-        </div>
-        <div class="logo-navbar">
-            <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
-        </div>
-        <div class="recherche">
-            <div class="group">
-                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-                    <g>
-                        <path
-                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                        </path>
-                    </g>
-                </svg>
-                <form action="/result" method="get">
-                    <input class="input" type="search" name="content" placeholder="Rechercher" />
-                </form>
-            </div>
-        </div>
-        {{if .IsLoggedIn}}
-        <div class="bouton-navbar">
-            <ul>
-                <li><a> Compte</a>
+                </div>
+                <div class="logo-navbar">
+                    <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
+                </div>
+                <div class="recherche">
+                    <div class="group">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+                            <g>
+                                <path
+                                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                                </path>
+                            </g>
+                        </svg>
+                        <form action="/result" method="get">
+                            <input class="input" type="search" name="content" placeholder="Rechercher" />
+                        </form>
+                    </div>
+                </div>
+                {{if .IsLoggedIn}}
+                <div class="bouton-navbar">
                     <ul>
-                        <li><a href="/deconnexion">Déconnexion</a></li>
+                        <li><a> Compte</a>
+                            <ul>
+                                <li><a href="/deconnexion">Déconnexion</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-        {{end}}
-    </div>
-    <div class="barre-header"></div>
-</header>
-<h1>Organisation de l'équipe <strong style="color: rgb(255, 0, 149)">rose</strong></h1>
-<h2>Les pages</h2>
-<li>accueil : Enzo - Date: 8 janvier</li>
-<li>New Articles : Romain - Date: 8 janvier</li>
-<li>Categories : Fabio - Date: 8 janvier</li>
-<li>Erreur 404 : Fabio - Date: 9 janvier</li>
-<li>Recherche : Romain - Date: 9 janvier</li>
-<li>Admin : Romain - Date: 9 janvier</li>
-<li>Mentions Légales: Fabio + Enzo - Date: 9 janvier</li>
-<li>Celle-là: Fabio + Enzo - Date: 9 janvier</li>
-<li>Login : Romain - Date: 10 janvier</li>
-<h2>Le CSS & html (partie graphique)</h2>
-<p>Kantin a tout fait (et Romain aussi un peu)</p>
-<p>(Merci Kherr-Edinne d'avoir dit que le premier css puait la merde)</p>
-<h2>Managing de l'équipe</h2>
-<p>8 janvier: Brainstorming pour décider de qui fait quoi</p>
-<p>Romain crée toute l'arborescence des fichiers ainsi que <a href="https://github.com/romaingdr/Blog-Ymmersion2"></a>le dépot github</a>.</p>
-<p>On se lance.</p>
-<h2>Fonctionnalités</h2>
-<p>Login : Romain</p>
-<p>Redirection automatique vers erreur 404 (quand page inconnue) : Romain</p>
-<p>Ajout d'articles : Romain</p>
-<p>Articles aléatoires : Enzo</p>
-<p>Redirection automatique vers erreur 404 quand ressource inconnue (catégories ou articles inexistants) : Romain</p>
-<p>Paramètres catégorie : Fabio</p>
-<footer>
-    <div class="footer">
-        <div class="Produit-par">
-            <div class="titre-footer">
-                <p>Produit par : </p>
+                </div>
+                {{end}}
             </div>
-            <div class="perso-footer">
-                <p>Enzo Carbonara</p>
-                <p>Romain GOUDERGUES</p>
-                <p>Fabio VINCENTELLI</p>
-                <p>Kantin FAGNIART</p>
+            <div class="barre-header"></div>
+        </header>
+        <section>
+            <div class="supra">
+                <div class="titre-global">
+                    <h1>Organisation de l'équipe <strong style="color: rgb(255, 0, 149)">ROSE</strong></h1>
+                </div>
+                <div class="elements-global">
+                    <div class="titre">
+                        <h2>Gestion de l'équipe</h2>
+                    </div>
+                    <div class="elements-rep">
+                        <div class="contenue-element">
+                            <p>Séance de brainstorming pour déterminer les rôles de chacun.</p>
+                            <p>8 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p class="texte">Romain est chargé de concevoir l'arborescence complète des fichiers, et
+                                de créer 
+                                <a href="https://github.com/romaingdr/Blog-Ymmersion2">le dépot github</a>, ainsi chargé
+                                du backend.
+                            </p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Kantin est chargé de prendre en charge le CSS et l'HTML des templates.</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Fabio et Enzo sont chargés de prendre en charge l'insertion du contenu côté backend dans
+                                les
+                                templates</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="elements-global">
+                    <div class="titre">
+                        <h2>Intégration de contenu côté backend</h2>
+                    </div>
+                    <div class="elements-rep">
+                        <div class="contenue-element">
+                            <p>Page accueil : Enzo </p>
+                            <p>8 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Page ajout d'articles : Romain </p>
+                            <p>8 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Page categories : Fabio </p>
+                            <p>8 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Page recherche : Romain </p>
+                            <p>9 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Page admin : Romain </p>
+                            <p>9 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Page mentions légales: Kantin </p>
+                            <p>11 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Page répartition des tâches : Kantin </p>
+                            <p>11 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Pages login : Romain </p>
+                            <p>10 janvier 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="elements-global">
+                    <div class="titre">
+                        <h2>Le CSS et l'HTML (partie graphique)</h2>
+                    </div>
+                    <div class="elements-rep">
+                        <div class="contenue-element">
+                            <p>Page accueil : Kantin </p>
+                            <p>8 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Page ajout d'articles : Kantin </p>
+                            <p>8 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p> Page categories : Kantin</p>
+                            <p>8 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Page recherche : Kantin </p>
+                            <p>9 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p> Page admin : Kantin</p>
+                            <p>9 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p> Page mentions légales: Kantin</p>
+                            <p>11 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p> Page répartition des tâches : Kantin</p>
+                            <p>11 janvier 2024</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Pages login : Kantin </p>
+                            <p>11 janvier 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="elements-global">
+                    <div class="titre">
+                        <h2>Les fonctionnalités</h2>
+                    </div>
+                    <div class="elements-rep">
+                        <div class="contenue-element">
+                            <p>Fonctionnalités du login : Romain</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Fonctionnalités de redirection automatique vers erreur 404 (quand page inconnue) : Romain
+                            </p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Fonctionnalités ajout d'articles : Romain</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Fonctionnalités articles aléatoires : Enzo</p>
+                        </div>
+                        <div class="contenue-element">
+                            <p>Fonctionnalités paramètres catégorie : Fabio</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="logo-footer">
-            <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
-        </div>
-        <div class="liens-footer">
-            <a href="/repartition">
-                Répartition des tâches de l'équipe
-            </a>
-            <a href="/explication">
-                Explication du thème
-            </a>
-            <a href="/mentions_legales">
-                Mentions Légales
-            </a>
-        </div>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="Produit-par">
+                    <div class="titre-footer">
+                        <p>Produit par : </p>
+                    </div>
+                    <div class="perso-footer">
+                        <p>Enzo Carbonara</p>
+                        <p>Romain GOUDERGUES</p>
+                        <p>Fabio VINCENTELLI</p>
+                        <p>Kantin FAGNIART</p>
+                    </div>
+                </div>
+                <div class="logo-footer">
+                    <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
+                </div>
+                <div class="liens-footer">
+                    <a href="/repartition">
+                        Répartition des tâches de l'équipe
+                    </a>
+                    <a href="/explication">
+                        Explication du thème
+                    </a>
+                    <a href="/mentions_legales">
+                        Mentions Légales
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
 </body>
+
 </html>
 {{end}}

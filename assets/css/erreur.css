@@ -8,6 +8,7 @@
 }
 
 body {
+    background-color: rgba(179, 179, 179, 0.1);
     display: flex;
     justify-content:center;
     align-items:center;

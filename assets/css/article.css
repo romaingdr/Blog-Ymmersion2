@@ -8,6 +8,7 @@ h1 {
 }
 
 body {
+    background-color: rgba(179, 179, 179, 0.1);
     padding-top: 70px;
     height: 100vh;
     display: flex;
