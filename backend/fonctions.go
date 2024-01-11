@@ -231,6 +231,21 @@ func GetEmailsFromJSON(filePath string) []string {
 	return emails
 }
 
+func GetUsersFromJSON(filePath string) []string {
+	fileContent, _ := ioutil.ReadFile(filePath)
+
+	var comptes Accounts
+
+	json.Unmarshal(fileContent, &comptes)
+
+	var usernames []string
+	for _, compte := range comptes.Comptes {
+		usernames = append(usernames, compte.Username)
+	}
+
+	return usernames
+}
+
 func GenerateSalt() (string, error) {
 	salt := make([]byte, 16)
 	_, err := rand.Read(salt)

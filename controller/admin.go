@@ -108,8 +108,9 @@ func GetCreds(w http.ResponseWriter, r *http.Request) {
 
 	valid := false
 	for _, account := range accounts.Comptes {
-		if account.Email == mail {
+		if account.Email == mail || account.Username == mail {
 			if backend.HashPassword(password, account.Salt) == account.Password {
+				fmt.Println("here")
 				valid = true
 				break
 			}
@@ -165,6 +166,14 @@ func MailVerifPage(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Nom d'utilisateur trop court")
 		http.Redirect(w, r, "/login", http.StatusSeeOther)
 		return
+	} else {
+		for _, element := range backend.GetUsersFromJSON("accounts.json") {
+			if element == username {
+				fmt.Println("Nom d'utilisateur déjà utilisé")
+				http.Redirect(w, r, "/login", http.StatusSeeOther)
+				return
+			}
+		}
 	}
 
 	if len(passwordAccount) < 8 {
