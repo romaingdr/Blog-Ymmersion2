@@ -56,6 +56,13 @@ type CategorieData struct {
 	Categorie  Categorie
 }
 
+type RememberData struct {
+	Remember struct {
+		Active   string `json:"Active"`
+		Username string `json:"Username"`
+	} `json:"remember"`
+}
+
 type ArticleData struct {
 	IsLoggedIn bool
 	AsAdmin    bool

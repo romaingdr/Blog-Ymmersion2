@@ -32,7 +32,7 @@ body {
 
 .card-side::before {
     position: absolute;
-    content: 'Connection';
+    content: 'Connexion';
     left: -90px;
     top: 0;
     width: 100px;
