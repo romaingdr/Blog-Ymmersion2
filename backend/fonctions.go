@@ -132,6 +132,10 @@ func GetSession() Session {
 	return GlobalSession
 }
 
+func IsAdmin() bool {
+	return GlobalSession.State == "admin"
+}
+
 func ClearSession() {
 	GlobalSession = Session{}
 }
@@ -159,7 +163,7 @@ func AddAccountToFile(account AccountCreation, filePath string) error {
 		"username": account.Username,
 		"email":    account.Email,
 		"password": hashedPassword,
-		"state":    "admin",
+		"state":    "member",
 		"salt":     salt,
 	}
 

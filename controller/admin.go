@@ -175,8 +175,8 @@ func MailVerifPage(w http.ResponseWriter, r *http.Request) {
 
 	smtpHost := "smtp.gmail.com"
 	smtpPort := 587
-	email := ""
-	password := ""
+	email := "octogamesverify@gmail.com"
+	password := "womp qoly znmc krqe"
 
 	to := []string{emailDestinataire}
 	subject := "Code de vérification Octo Games"

@@ -4,15 +4,6 @@
       "name": "Esport",
       "articles": [
         {
-          "id": 1001,
-          "titre": "La révolution des sports électroniques : Vers une reconnaissance officielle",
-          "image": "1001.png",
-          "introduction": "Explorez le mouvement pour une reconnaissance officielle des sports électroniques à l'échelle internationale.",
-          "auteur": "Thomas Rousseau",
-          "date": "2024-01-09",
-          "corps": "Les sports électroniques gagnent en légitimité et en reconnaissance, suscitant des débats sur leur statut en tant que discipline sportive à part entière."
-        },
-        {
           "id": 1002,
           "titre": "Les enjeux économiques des équipes professionnelles d'esport",
           "image": "1002.png",
@@ -49,15 +40,6 @@
           "corps": "Les tournois esportifs évoluent constamment. Quelles sont les tendances actuelles et les défis que rencontrent les organisateurs ?"
         },
         {
-          "id": 1006,
-          "titre": "L'essor des jeux mobiles dans l'univers esportif",
-          "image": "default.png",
-          "introduction": "Exploration de l'influence croissante des jeux mobiles dans la scène esportive mondiale.",
-          "auteur": "Léa Petit",
-          "date": "2024-01-05",
-          "corps": "Les jeux mobiles gagnent en popularité et leur impact sur l'esport est de plus en plus significatif. Comment ces jeux s'intègrent-ils dans le monde compétitif des sports électroniques ?"
-        },
-        {
           "id": 1007,
           "titre": "L'éthique dans les compétitions esportives : Enjeux et débats",
           "image": "default.png",
@@ -92,6 +74,15 @@
           "auteur": "Lucie Tremblay",
           "date": "2024-01-07",
           "corps": "Les compétitions esportives féminines gagnent en popularité mais font face à des obstacles. Analyse de cette évolution et des enjeux pour les joueuses."
+        },
+        {
+          "id": 7998,
+          "titre": "La révolution des sports électroniques",
+          "image": "horizon.jpg",
+          "introduction": "introdu",
+          "auteur": "Goudergues Romain",
+          "date": "2024-01-11",
+          "corps": "contenu"
         }
       ]
     },
@@ -283,7 +274,6 @@
           "date": "2023-12-31",
           "corps": "'Horizon Zero Dawn' offre un monde ouvert captivant, des machines redoutables et une quête poignante dans un univers post-apocalyptique."
         }
-
       ]
     }
   ]

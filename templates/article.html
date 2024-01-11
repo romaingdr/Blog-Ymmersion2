@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>{{.Data.Article.Titre}}</title>
-    <link href="/static/css/header.css" rel="stylesheet">
-    <link href="/static/css/article.css" rel="stylesheet">
+    <link href="http://localhost:8080/static/css/header.css" rel="stylesheet">
+    <link href="http://localhost:8080/static/css/article.css" rel="stylesheet">
 </head>
 
 <body>
+<div class="elle-casse-tout">
     <header>
         <div class="navbar">
             <div class="bouton-navbar">
@@ -21,22 +22,25 @@
                             <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                         </ul>
                     </li>
-                    {{if .IsLoggedIn}}
+                    {{if .AsAdmin}}
                     <li><a href="/admin">Admin</a></li>
                     {{else}}
+                    {{if not .IsLoggedIn}}
                     <li><a href="/login">Se connecter</a></li>
+                    {{end}}
                     {{end}}
                 </ul>
             </div>
             <div class="logo-navbar">
-                <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
+                <img src="http://localhost:8080/static/images/site/octo.png" alt="" width="120px"
+                     height="50px">
             </div>
             <div class="recherche">
                 <div class="group">
                     <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
                         <g>
                             <path
-                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
                             </path>
                         </g>
                     </svg>
@@ -45,31 +49,32 @@
                     </form>
                 </div>
             </div>
-            {{if .IsLoggedIn}}
-            <div class="bouton-navbar">
-                <ul>
-                    <li><a> Compte</a>
-                        <ul>
-                            <li><a href="/deconnexion">Déconnexion</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            {{end}}
         </div>
         <div class="barre-header">
         </div>
     </header>
-    <section class="articles">
-        <h1>{{.Data.Article.Titre}}</h1>
-        <img src="/static/images/{{.Data.Article.Image}}" alt="Image de l'article">
-        <p>Introduction: {{.Data.Article.Intro}}</p>
-        <p>Auteur: {{.Data.Article.Auteur}}</p>
-        <p>Date: {{.Data.Article.Date}}</p>
-        <div>
-            <p>Corps: </p>
-            <p>{{.Data.Article.Body}}</p>
+    <section class="global-article">
+        <div class="image-article">
+            <img src="http://localhost:8080/static/images/{{.Data.Article.Image}}" alt="Image de l'article">
         </div>
+        <div class="articles-22">
+            <div class="titre-articles">
+                <h1>{{.Data.Article.Titre}}</h1>
+            </div>
+            <div class="articles-corp">
+                <div class="intro-articles">
+                    <p>{{.Data.Article.Intro}}</p>
+                </div>
+                <div class="corps-article">
+                    <p>{{.Data.Article.Body}}</p>
+                </div>
+            </div>
+            <div class="auteur-articles">
+                <p>Auteur: {{.Data.Article.Auteur}}</p>
+                <p>Date: {{.Data.Article.Date}}</p>
+            </div>
+        </div>
+
     </section>
     <footer>
         <div class="footer">
@@ -85,21 +90,23 @@
                 </div>
             </div>
             <div class="logo-footer">
-                <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
+                <img src="http://localhost:8080/static/images/site/logo.png" alt="" width="50px"
+                     height="50px">
             </div>
             <div class="liens-footer">
-                <a href="">
+                <a href="/repartition">
                     Répartition des tâches de l'équipe
                 </a>
                 <a href="">
                     Explication du thème
                 </a>
                 <a href="/mentions_legales">
-                    Mention Légal
+                    Mentions Légales
                 </a>
             </div>
         </div>
     </footer>
+</div>
 </body>
 
 </html>

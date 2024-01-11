@@ -22,10 +22,12 @@
                             <li><a href="/categorie?categorie=presentations">Présentation</a></li>
                         </ul>
                     </li>
-                    {{if .IsLoggedIn}}
+                    {{if .AsAdmin}}
                     <li><a href="/admin">Admin</a></li>
                     {{else}}
+                    {{if not .IsLoggedIn}}
                     <li><a href="/login">Se connecter</a></li>
+                    {{end}}
                     {{end}}
                 </ul>
             </div>
@@ -101,14 +103,14 @@
                 <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
             </div>
             <div class="liens-footer">
-                <a href="">
+                <a href="/repartition">
                     Répartition des tâches de l'équipe
                 </a>
                 <a href="">
                     Explication du thème
                 </a>
-                <a href="">
-                    Mention Légal
+                <a href="/mentions_legales">
+                    Mentions Légales
                 </a>
             </div>
         </div>

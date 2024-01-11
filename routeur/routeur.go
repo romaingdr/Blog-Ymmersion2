@@ -27,6 +27,7 @@ func Initserv() {
 	http.HandleFunc("/mail_verif", controller.MailVerifPage)
 	http.HandleFunc("/verifycode", controller.VerifCode)
 	http.HandleFunc("/success_code", controller.SuccessPage)
+	http.HandleFunc("/repartition", controller.Repartition)
 
 	http.HandleFunc("/", controller.DefaultHandler)
 

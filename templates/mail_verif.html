@@ -2,16 +2,28 @@
 <html>
 <head>
     <title>Vérification du code</title>
+    <link rel="stylesheet" href="http://localhost:8080/static/css/mail-verif.css">
 </head>
 <body>
-<h1>Vérification du code</h1>
 {{ if not .Success }}
 <p style="color: red;">{{ .Message }}</p>
 {{ end }}
 <form action="/verifycode" method="post">
-    <label for="verificationCode">Entrez le code de vérification reçu par e-mail :</label><br>
-    <input type="text" id="verificationCode" name="verificationCode" required><br><br>
-    <input type="submit" value="Vérifier le code">
+    <div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+                <div class="flip-cardinner">
+                    <div class="flip-cardfront">
+                        <div class="title">Vérification code e-mail</div>
+                        <form action="" class="flip-cardform">
+                            <input type="text" placeholder="Code" id="verificationCode" name="verificationCode" class="flip-cardinput" required>
+                            <button class="flip-card__btn">Envoyer !</button>
+                        </form>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
 </form>
 </body>
 </html>

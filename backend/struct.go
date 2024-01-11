@@ -47,20 +47,24 @@ type Session struct {
 type IndexData struct {
 	Articles   []Article
 	IsLoggedIn bool
+	AsAdmin    bool
 }
 
 type CategorieData struct {
 	IsLoggedIn bool
+	AsAdmin    bool
 	Categorie  Categorie
 }
 
 type ArticleData struct {
 	IsLoggedIn bool
+	AsAdmin    bool
 	Data       map[string]interface{}
 }
 
 type LoginStatus struct {
 	IsLoggedIn bool
+	AsAdmin    bool
 }
 
 type AccountCreation struct {

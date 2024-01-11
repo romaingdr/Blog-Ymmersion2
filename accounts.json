@@ -6,6 +6,13 @@
       "salt": "zOHspaUpajULcfHyjxRERQ==",
       "state": "admin",
       "username": "testuser"
+    },
+    {
+      "email": "julien.dante@ynov.com",
+      "password": "z0jB2Vm2kRAEE5sbbMMqXgZhcXw3Lzs_i1tciz5tbwU=",
+      "salt": "O1JL2VzYuVhfTjgqqV2tNA==",
+      "state": "member",
+      "username": "Julienlezozo"
     }
   ]
 }

@@ -15,7 +15,9 @@ import (
 )
 
 func ArticlePage(w http.ResponseWriter, r *http.Request) {
-	session := backend.GetSession().State == "admin"
+	session := backend.GetSession() != backend.Session{}
+	isAdmin := backend.IsAdmin()
+
 	queryID := r.URL.Query().Get("id")
 	articleID, err := strconv.Atoi(queryID)
 	if err != nil {
@@ -51,6 +53,7 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 
 	articleData := backend.ArticleData{
 		IsLoggedIn: session,
+		AsAdmin:    isAdmin,
 		Data:       data,
 	}
 
@@ -58,7 +61,8 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func IndexPage(w http.ResponseWriter, r *http.Request) {
-	session := backend.GetSession().State == "admin"
+	session := backend.GetSession() != backend.Session{}
+	isAdmin := backend.IsAdmin()
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
 		fmt.Println("Erreur dans la lecture du json : ", err)
@@ -76,13 +80,17 @@ func IndexPage(w http.ResponseWriter, r *http.Request) {
 	data := backend.IndexData{
 		Articles:   randomArticles,
 		IsLoggedIn: session,
+		AsAdmin:    isAdmin,
 	}
 
+	fmt.Println(session)
+	fmt.Println(isAdmin)
 	templates.Temp.ExecuteTemplate(w, "index", data)
 }
 
 func CategoriePage(w http.ResponseWriter, r *http.Request) {
-	session := backend.GetSession().State == "admin"
+	session := backend.GetSession() != backend.Session{}
+	isAdmin := backend.IsAdmin()
 
 	content, err := os.ReadFile("blog.json")
 	if err != nil {
@@ -107,11 +115,12 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 	case "categorie=presentations":
 		Data = result.Categories[2]
 	default:
-		templates.Temp.ExecuteTemplate(w, "erreur", nil)
+		http.Redirect(w, r, "/error", http.StatusSeeOther)
 	}
 
 	categorieData := backend.CategorieData{
 		IsLoggedIn: session,
+		AsAdmin:    isAdmin,
 		Categorie:  Data,
 	}
 
@@ -119,7 +128,8 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func ResultPage(w http.ResponseWriter, r *http.Request) {
-	session := backend.GetSession().State == "admin"
+	session := backend.GetSession() != backend.Session{}
+	isAdmin := backend.IsAdmin()
 	recherche := r.URL.Query().Get("content")
 	var jsonData backend.JSONData
 
@@ -148,6 +158,7 @@ func ResultPage(w http.ResponseWriter, r *http.Request) {
 	data := backend.IndexData{
 		Articles:   resultArticles,
 		IsLoggedIn: session,
+		AsAdmin:    isAdmin,
 	}
 
 	templates.Temp.ExecuteTemplate(w, "result", data)
@@ -215,11 +226,13 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 }
 
 func Mentions(w http.ResponseWriter, r *http.Request) {
-	data := backend.LoginStatus{IsLoggedIn: backend.GetSession().State == "admin"}
+	data := backend.LoginStatus{IsLoggedIn: backend.GetSession() != backend.Session{}, AsAdmin: backend.IsAdmin()}
 
 	templates.Temp.ExecuteTemplate(w, "mentions", data)
 }
 
-func AddAccountPage(w http.ResponseWriter, r *http.Request) {
-	templates.Temp.ExecuteTemplate(w, "create_account", nil)
+func Repartition(w http.ResponseWriter, r *http.Request) {
+	data := backend.LoginStatus{IsLoggedIn: backend.GetSession() != backend.Session{}, AsAdmin: backend.IsAdmin()}
+
+	templates.Temp.ExecuteTemplate(w, "repartition", data)
 }

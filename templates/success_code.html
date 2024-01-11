@@ -6,12 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>404 - Erreur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://localhost:8080/static/css/success.css">
 </head>
 
 <body>
-<h1>Félicitations !</h1>
-<p>Votre compte a bien été créé !</p>
-<a href="/accueil">Retourner à l'accueil</a>
+<div class="wrapper">
+    <div class="card-switch">
+        <label class="switch">
+            <div class="flip-cardinner">
+                <div class="flip-cardfront">
+                    <div class="title">Félicitations !</div>
+                    <div class="title">Votre compte a bien été créé !</div>
+                    <a href="/accueil">
+                        <button class="flip-card__btn">Retourner à l'accueil</button>
+                    </a>
+                </div>
+            </div>
+        </label>
+    </div>
 </body>
 
 </html>
