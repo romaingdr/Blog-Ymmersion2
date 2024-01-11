@@ -28,6 +28,7 @@ func Initserv() {
 	http.HandleFunc("/verifycode", controller.VerifCode)
 	http.HandleFunc("/success_code", controller.SuccessPage)
 	http.HandleFunc("/repartition", controller.Repartition)
+	http.HandleFunc("/explication", controller.Explication)
 
 	http.HandleFunc("/", controller.DefaultHandler)
 

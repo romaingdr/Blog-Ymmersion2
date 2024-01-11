@@ -236,3 +236,9 @@ func Repartition(w http.ResponseWriter, r *http.Request) {
 
 	templates.Temp.ExecuteTemplate(w, "repartition", data)
 }
+
+func Explication(w http.ResponseWriter, r *http.Request) {
+	data := backend.LoginStatus{IsLoggedIn: backend.GetSession() != backend.Session{}, AsAdmin: backend.IsAdmin()}
+
+	templates.Temp.ExecuteTemplate(w, "explication", data)
+}

@@ -1,13 +1,13 @@
-{{define "categorie"}}
-<html lang="fr">
-
+{{define "explication"}}
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Catégorie</title>
-    <link href="http://localhost:8080/static/css/header.css" rel="stylesheet">
-    <link href="http://localhost:8080/static/css/categorie.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Explication du thème</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
-
 <body>
 <div class="elle-casse-tout">
     <header>
@@ -32,7 +32,7 @@
                 </ul>
             </div>
             <div class="logo-navbar">
-                <img src="http://localhost:8080/static/images/site/octo.png" alt="" width="120px" height="50px">
+                <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
             </div>
             <div class="recherche">
                 <div class="group">
@@ -60,28 +60,19 @@
             </div>
             {{end}}
         </div>
-        <div class="barre-header">
-        </div>
+        <div class="barre-header"></div>
     </header>
-    <section class="categorie-global">
-        <div class="nom-categorie">
-            <h1 class="nom">{{.Categorie.Name}}</h1>
-        </div>
-        <div class="articles-categorie">
-            {{ range  .Categorie.Articles }}
-            <a href="/article?id={{ .Id }}" style="text-decoration:none">
-                <div class="articles">
-                    <div class="img-article">
-                        <img src="http://localhost:8080/static/images/{{ .Image }}" alt="{{ .Titre }}">
-                    </div>
-                    <div class="titre-article">
-                        <h1>{{ .Titre }}</h1>
-                    </div>
-                </div>
-            </a>
-            {{ end }}
-        </div>
-    </section>
+
+    <h1>Présentation du thème</h1>
+    <p>Pour notre blog, on a choisi le thème des jeux vidéos qu'on a divisé dans les catégories Présentations, Nouveautés et Esport.</p>
+    <h2>Présentations</h2>
+    <p>Dans la catégorie <strong>présentaions</strong>, nous trouvons principalement des présentations de jeux.
+        Les articles de cette section se penchent sur les mécaniques de jeu, les graphismes, l'histoire et d'autres aspects clés, offrant ainsi aux joueurs potentiels un aperçu complet avant de faire leur choix.</p>
+    <h2>Nouveautés</h2>
+    <p>Dans la catégorie <strong>nouveautés</strong>, nous couvrons les dernières actualités, y compris les sorties de jeux tant attendues, les extensions (DLC), les annonces officielles des studios de développement et les mises à jour importantes</p>
+    <h2>Esport</h2>
+    <p>Dans la catégorie <strong>Esport</strong>, nous couvrons toutes les actualités sur les compétitions esport. Nous trouvons aussi des articles sur certaines équipes ou certains évènements marquants de la scène esport.</p>
+
     <footer>
         <div class="footer">
             <div class="Produit-par">
@@ -89,7 +80,7 @@
                     <p>Produit par : </p>
                 </div>
                 <div class="perso-footer">
-                    <p>Enzo Carbonara</p>
+                    <p>Enzo CARBONARA</p>
                     <p>Romain GOUDERGUES</p>
                     <p>Fabio VINCENTELLI</p>
                     <p>Kantin FAGNIART</p>
@@ -99,7 +90,7 @@
                 <img src="http://localhost:8080/static/images/logo.png" alt="" width="50px" height="50px">
             </div>
             <div class="liens-footer">
-                <a href="/repartition">
+                <a href="/organisation">
                     Répartition des tâches de l'équipe
                 </a>
                 <a href="/explication">
@@ -113,6 +104,5 @@
     </footer>
 </div>
 </body>
-
 </html>
 {{end}}

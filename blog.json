@@ -4,6 +4,24 @@
       "name": "Esport",
       "articles": [
         {
+          "id": 1001,
+          "titre": "La révolution des sports électroniques : Vers une reconnaissance officielle",
+          "image": "1001.png",
+          "introduction": "Explorez le mouvement pour une reconnaissance officielle des sports électroniques à l'échelle internationale.",
+          "auteur": "Thomas Rousseau",
+          "date": "2024-01-09",
+          "corps": "Les sports électroniques gagnent en légitimité et en reconnaissance, suscitant des débats sur leur statut en tant que discipline sportive à part entière."
+        },
+        {
+          "id": 1002,
+          "titre": "Les enjeux économiques des équipes professionnelles d'esport",
+          "image": "1002.png",
+          "introduction": "Analyse approfondie des modèles économiques des équipes d'esport et de leur viabilité à long terme.",
+          "auteur": "Sophie Leroy",
+          "date": "2024-01-09",
+          "corps": "Derrière les victoires sur l'écran se cachent des stratégies financières complexes : plongée dans l'économie des équipes professionnelles d'esport."
+        },
+        {
           "id": 1003,
           "titre": "L'impact psychologique de la compétition esportive de haut niveau",
           "image": "1003.png",
@@ -33,7 +51,7 @@
         {
           "id": 1007,
           "titre": "L'éthique dans les compétitions esportives : Enjeux et débats",
-          "image": "default.png",
+          "image": "1007.png",
           "introduction": "Discussion sur les questions éthiques émergentes dans le domaine des compétitions esportives.",
           "auteur": "Gabriel Moreau",
           "date": "2024-01-04",
@@ -42,7 +60,7 @@
         {
           "id": 1008,
           "titre": "La croissance économique fulgurante de l'esport : Analyse des tendances",
-          "image": "default.png",
+          "image": "1008.png",
           "introduction": "Plongée dans l'expansion financière rapide de l'esport et ses implications sur l'industrie du divertissement.",
           "auteur": "Sophie Martin",
           "date": "2024-01-09",
@@ -51,7 +69,7 @@
         {
           "id": 1009,
           "titre": "Le rôle croissant des sponsors dans l'esport : Impact et évolution",
-          "image": "default.png",
+          "image": "1009.png",
           "introduction": "Analyse de l'influence grandissante des sponsors dans l'esport et leurs stratégies pour toucher un public plus large.",
           "auteur": "Antoine Dubois",
           "date": "2024-01-08",
@@ -60,20 +78,11 @@
         {
           "id": 1010,
           "titre": "L'essor des compétitions féminines dans l'univers de l'esport",
-          "image": "default.png",
+          "image": "1010.png",
           "introduction": "Analyse du mouvement croissant des compétitions esportives féminines et des défis rencontrés.",
           "auteur": "Lucie Tremblay",
           "date": "2024-01-07",
           "corps": "Les compétitions esportives féminines gagnent en popularité mais font face à des obstacles. Analyse de cette évolution et des enjeux pour les joueuses."
-        },
-        {
-          "id": 7998,
-          "titre": "La révolution des sports électroniques",
-          "image": "horizon.jpg",
-          "introduction": "introdu",
-          "auteur": "Goudergues Romain",
-          "date": "2024-01-11",
-          "corps": "contenu"
         }
       ]
     },

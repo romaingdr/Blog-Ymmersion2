@@ -1,5 +1,5 @@
 {{define "login"}}
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,17 @@
 </head>
 
 <body>
+    <div class="retour">
+        <div class="wrapper-retour">
+            <div class="flip-card__inner-retour">
+                <div class="flip-card__front-retour">
+                    <form action="/accueil" class="flip-card__form" method="post">
+                        <button class="flip-card__btn-retour">Retour à l'accueil</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 <form action="/login_credits" method="post">
     <div class="wrapper">
         <div class="card-switch">
