@@ -14,6 +14,7 @@ import (
 	"ymmersion2/templates"
 )
 
+// ArticlePage est la fonction handler de la page d'article qui permet d'afficher un article
 func ArticlePage(w http.ResponseWriter, r *http.Request) {
 	session := backend.GetSession() != backend.Session{}
 	isAdmin := backend.IsAdmin()
@@ -60,6 +61,7 @@ func ArticlePage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "article", articleData)
 }
 
+// IndexPage est la fonction handel de la page d'accueil
 func IndexPage(w http.ResponseWriter, r *http.Request) {
 	session := backend.GetSession() != backend.Session{}
 	isAdmin := backend.IsAdmin()
@@ -88,6 +90,7 @@ func IndexPage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "index", data)
 }
 
+// CategoriePage est la fonction handler de la page de séléction de catégorie
 func CategoriePage(w http.ResponseWriter, r *http.Request) {
 	session := backend.GetSession() != backend.Session{}
 	isAdmin := backend.IsAdmin()
@@ -127,6 +130,7 @@ func CategoriePage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "categorie", categorieData)
 }
 
+// ResultPage est la fonction handler de la page result afin d'afficher le résultat de la recherche
 func ResultPage(w http.ResponseWriter, r *http.Request) {
 	session := backend.GetSession() != backend.Session{}
 	isAdmin := backend.IsAdmin()
@@ -164,6 +168,7 @@ func ResultPage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "result", data)
 }
 
+// RecuDatas permet de récupérer les données de l'ajout d'un article et de les traiter
 func RecuDatas(w http.ResponseWriter, r *http.Request) {
 	r.ParseMultipartForm(10 << 20)
 
@@ -225,18 +230,21 @@ func RecuDatas(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/new_article", http.StatusSeeOther)
 }
 
+// Mentions est la fonction handler de la page de mentions légales
 func Mentions(w http.ResponseWriter, r *http.Request) {
 	data := backend.LoginStatus{IsLoggedIn: backend.GetSession() != backend.Session{}, AsAdmin: backend.IsAdmin()}
 
 	templates.Temp.ExecuteTemplate(w, "mentions", data)
 }
 
+// Repartition est la fonction handler de la page de répartition des tâches
 func Repartition(w http.ResponseWriter, r *http.Request) {
 	data := backend.LoginStatus{IsLoggedIn: backend.GetSession() != backend.Session{}, AsAdmin: backend.IsAdmin()}
 
 	templates.Temp.ExecuteTemplate(w, "repartition", data)
 }
 
+// Explication est la fonction handler de la page d'explication du thème
 func Explication(w http.ResponseWriter, r *http.Request) {
 	data := backend.LoginStatus{IsLoggedIn: backend.GetSession() != backend.Session{}, AsAdmin: backend.IsAdmin()}
 

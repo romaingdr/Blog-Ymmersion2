@@ -14,6 +14,7 @@ import (
 	"ymmersion2/templates"
 )
 
+// AdminPage est la fonction handler de la page d'administration
 func AdminPage(w http.ResponseWriter, r *http.Request) {
 	if backend.GetSession().State != "admin" {
 		http.Redirect(w, r, "/accueil", http.StatusSeeOther)
@@ -27,6 +28,7 @@ func AdminPage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "admin", data)
 }
 
+// AddArticlePage est la fonction handler de la page d'ajout d'articles
 func AddArticlePage(w http.ResponseWriter, r *http.Request) {
 	if backend.GetSession().State != "admin" {
 		http.Redirect(w, r, "/accueil", http.StatusSeeOther)
@@ -35,6 +37,7 @@ func AddArticlePage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "newarticle", nil)
 }
 
+// DeletePage est la fonction qui permet de supprimer un article de la base de donnée
 func DeletePage(w http.ResponseWriter, r *http.Request) {
 	if backend.GetSession().State != "admin" {
 		http.Redirect(w, r, "/accueil", http.StatusSeeOther)
@@ -75,6 +78,7 @@ func DeletePage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// DefaultHandler est la fonction qui redirige vers la page 404 en cas de route inconnue
 func DefaultHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNotFound)
 
@@ -85,11 +89,13 @@ func DefaultHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// LoginPage est la fonction qui permet d'exécuter la page de login
 func LoginPage(w http.ResponseWriter, r *http.Request) {
 	errMessage := r.URL.Query().Get("error")
 	templates.Temp.ExecuteTemplate(w, "login", errMessage)
 }
 
+// GetCreds est la fonction qui permet de récupérer les données de login et de les traiter
 func GetCreds(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
@@ -108,7 +114,7 @@ func GetCreds(w http.ResponseWriter, r *http.Request) {
 
 	valid := false
 	for _, account := range accounts.Comptes {
-		if account.Email == mail || account.Username == mail {
+		if account.Email == mail {
 			if backend.HashPassword(password, account.Salt) == account.Password {
 				fmt.Println("here")
 				valid = true
@@ -132,12 +138,14 @@ func GetCreds(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Deconnexion est la fonction afin de gérer la déconnexion d'une session active
 func Deconnexion(w http.ResponseWriter, r *http.Request) {
 	backend.ClearSession()
 	backend.ClearRemember("rememberSession.json")
 	http.Redirect(w, r, "/accueil", http.StatusSeeOther)
 }
 
+// MailVerifPage permet de vérifier les champs rentrés lors de la création d'un compte et envoie un mail pour valider le compte
 func MailVerifPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		data := backend.MailCodeData{
@@ -222,6 +230,7 @@ func MailVerifPage(w http.ResponseWriter, r *http.Request) {
 	templates.Temp.ExecuteTemplate(w, "mailverif", data)
 }
 
+// VerifCode vérifie si le code reçu et le code envoyé par mail correspondent et redirige en fonction
 func VerifCode(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	codeRecu := r.FormValue("verificationCode")
@@ -239,6 +248,7 @@ func VerifCode(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/mail_verif", http.StatusSeeOther)
 }
 
+// SuccessPage est la fonction handler de la page de succès après la création d'un compte
 func SuccessPage(w http.ResponseWriter, r *http.Request) {
 	backend.AddAccountToFile(backend.GlobalAccount, "accounts.json")
 	backend.ClearAccount()

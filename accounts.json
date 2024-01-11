@@ -13,6 +13,13 @@
       "salt": "_yq-L6btWmD6-9cTWBsPjQ==",
       "state": "admin",
       "username": "kantin"
+    },
+    {
+      "email": "romgoud123@gmail.com",
+      "password": "JwWpWGpWMw4feXbjAps78lS8yLJghsngajrX70lphSY=",
+      "salt": "VXxxDtdXpVxiFz0Vh5NFsQ==",
+      "state": "member",
+      "username": "Romaingdrg"
     }
   ]
 }
