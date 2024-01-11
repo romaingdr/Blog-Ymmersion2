@@ -4,15 +4,6 @@
       "name": "Esport",
       "articles": [
         {
-          "id": 1002,
-          "titre": "Les enjeux économiques des équipes professionnelles d'esport",
-          "image": "1002.png",
-          "introduction": "Analyse approfondie des modèles économiques des équipes d'esport et de leur viabilité à long terme.",
-          "auteur": "Sophie Leroy",
-          "date": "2024-01-09",
-          "corps": "Derrière les victoires sur l'écran se cachent des stratégies financières complexes : plongée dans l'économie des équipes professionnelles d'esport."
-        },
-        {
           "id": 1003,
           "titre": "L'impact psychologique de la compétition esportive de haut niveau",
           "image": "1003.png",

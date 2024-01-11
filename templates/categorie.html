@@ -78,39 +78,8 @@
                         <h1>{{ .Titre }}</h1>
                     </div>
                 </div>
-                {{if .IsLoggedIn}}
-                <div class="bouton-navbar">
-                    <ul>
-                        <li><a> Compte</a>
-                            <ul>
-                                <li><a href="/deconnexion">Déconnexion</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                {{end}}
-            </div>
-            <div class="barre-header">
-            </div>
-        </header>
-        <div class="categorie-global">
-            <div class="titre-categorie">
-                <h2 class="nom">{{.Name}}</h2>
-            </div>
-            <div id="description">
-                {{ range .Articles }}
-                <div class="article-all">
-                    <a href="/article?id={{ .Id }}">
-                        <div class="img-article">
-                            <img src="/static/images/{{ .Image }}" alt="{{ .Titre }}" width="200">
-                        </div>
-                        <div id="textu">
-                            <h1 style="text-decoration:none" class="titre-article">{{ .Titre }}</h1>
-                        </div>
-                    </a>
-                </div>
-                {{ end }}
-            </div>
+            </a>
+            {{ end }}
         </div>
     </section>
     <footer>
