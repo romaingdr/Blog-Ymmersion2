@@ -177,8 +177,9 @@ body {
 
 .intro {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 15px;
 }
 
 .intro label {
@@ -191,8 +192,9 @@ body {
 
 .contenu {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 15px;
 }
 
 .contenu label {
@@ -317,8 +319,9 @@ body {
 
 .titre {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 15px;
 }
 
 .titre label {
@@ -327,8 +330,9 @@ body {
 
 .auteur {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 15px;
 }
 
 .auteur label {
@@ -337,8 +341,9 @@ body {
 
 .choix {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 15px;
 }
 
 .choix label {
