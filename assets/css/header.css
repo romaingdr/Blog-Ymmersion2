@@ -128,7 +128,7 @@ header ul li:hover ul li {
 }
 
 .input:focus,
-input:hover {
+.input:hover {
     outline: none;
     border-color: rgba(247, 127, 0, 0.4);
     background-color: #fff;

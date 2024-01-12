@@ -20,38 +20,48 @@
             </div>
         </div>
     </div>
-<form action="/login_credits" method="post">
-    <div class="wrapper">
-        <div class="card-switch">
-            <label class="switch">
-                <input class="toggle" type="checkbox">
-                <span class="slider"></span>
-                <span class="card-side"></span>
-                <div class="flip-card__inner">
-                    <div class="flip-card__front">
-                        <div class="title">Se Connecter</div>
-                        <form action="/login_credits" class="flip-card__form" method="post">
-                            <input type="text" placeholder="Nom d'utilisateur" name="username" class="flip-card__input">
-                            <input type="password" placeholder="Mot De Passe" name="password" class="flip-card__input">
-                            <label for="remember">Se souvenir de moi</label>
-                            <input type="checkbox" id="remember" name="remember" class="flip-card__checkbox">
-                            <button class="flip-card__btn">Let`s go!</button>
-                        </form>
+    <form action="/login_credits" method="post">
+        <div class="wrapper">
+            <div class="card-switch">
+                <label class="switch">
+                    <input class="toggle" type="checkbox">
+                    <span class="slider"></span>
+                    <span class="card-side"></span>
+                    <div class="flip-card__inner">
+                        <div class="flip-card__front">
+                            <div class="title">Se Connecter</div>
+                            <form action="/login_credits" class="flip-card__form" method="post">
+                                <input type="text" placeholder="Nom d'utilisateur" name="username"
+                                    class="flip-card__input">
+                                <input type="password" placeholder="Mot De Passe" name="password"
+                                    class="flip-card__input">
+                                <label class="container" for="remember">
+                                    <input checked="checked" id="remember" name="remember" type="checkbox">
+                                    <div class="checkmark"></div>
+                                    <div class="text">
+                                        Se souvenir de moi
+                                    </div>
+                                </label>
+                                <button class="flip-card__btn">Let`s go!</button>
+                            </form>
+                        </div>
+                        <div class="flip-card__back">
+                            <div class="title">Créer un compte</div>
+                            <form action="/mail_verif" class="flip-card__form" method="post">
+                                <input type="name" placeholder="Nom d'utilisateur" name="username"
+                                    class="flip-card__input">
+                                <input type="email" placeholder="email@exemple.com" name="email"
+                                    class="flip-card__input">
+                                <input type="password" placeholder="Mot De Passe" name="password"
+                                    class="flip-card__input">
+                                <button class="flip-card__btn">Confirm !</button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="flip-card__back">
-                        <div class="title">Créer un compte</div>
-                        <form action="/mail_verif" class="flip-card__form" method="post">
-                            <input type="name" placeholder="Nom d'utilisateur" name="username" class="flip-card__input">
-                            <input type="email" placeholder="email@exemple.com" name="email" class="flip-card__input">
-                            <input type="password" placeholder="Mot De Passe" name="password" class="flip-card__input">
-                            <button class="flip-card__btn">Confirm !</button>
-                        </form>
-                    </div>
-                </div>
-            </label>
+                </label>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 </body>
 
 </html>

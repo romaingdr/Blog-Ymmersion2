@@ -1,78 +1,130 @@
 {{define "explication"}}
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Explication du thème</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/css/header.css">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="http://localhost:8080/static/css/header.css">
+    <link rel="stylesheet" href="http://localhost:8080/static/css/theme.css">
 </head>
+
 <body>
-<div class="elle-casse-tout">
-    <header>
-        <div class="navbar">
-            <div class="bouton-navbar">
-                <ul>
-                    <li><a href="/accueil">Accueil</a></li>
-                    <li><a> Catégories</a>
-                        <ul>
-                            <li><a href="/categorie?categorie=nouveautes">Nouveauté</a></li>
-                            <li><a href="/categorie?categorie=esport">E-Sport</a></li>
-                            <li><a href="/categorie?categorie=presentations">Présentation</a></li>
-                        </ul>
-                    </li>
-                    {{if .AsAdmin}}
-                    <li><a href="/admin">Admin</a></li>
-                    {{else}}
-                    {{if not .IsLoggedIn}}
-                    <li><a href="/login">Se connecter</a></li>
-                    {{end}}
-                    {{end}}
-                </ul>
-            </div>
-            <div class="logo-navbar">
-                <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
-            </div>
-            <div class="recherche">
-                <div class="group">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-                        <g>
-                            <path
-                                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                            </path>
-                        </g>
-                    </svg>
-                    <form action="/result" method="get">
-                        <input class="input" type="search" name="content" placeholder="Rechercher" />
-                    </form>
+    <div class="elle-casse-tout">
+        <header>
+            <div class="navbar">
+                <div class="bouton-navbar">
+                    <ul>
+                        <li><a href="/accueil">Accueil</a></li>
+                        <li><a> Catégories</a>
+                            <ul>
+                                <li><a href="/categorie?categorie=nouveautes">Nouveauté</a></li>
+                                <li><a href="/categorie?categorie=esport">E-Sport</a></li>
+                                <li><a href="/categorie?categorie=presentations">Présentation</a></li>
+                            </ul>
+                        </li>
+                        {{if .AsAdmin}}
+                        <li><a href="/admin">Admin</a></li>
+                        {{else}}
+                        {{if not .IsLoggedIn}}
+                        <li><a href="/login">Se connecter</a></li>
+                        {{end}}
+                        {{end}}
+                    </ul>
                 </div>
+                <div class="logo-navbar">
+                    <img src="http://localhost:8080/static/images/octo.png" alt="" width="120px" height="50px">
+                </div>
+                <div class="recherche">
+                    <div class="group">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+                            <g>
+                                <path
+                                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                                </path>
+                            </g>
+                        </svg>
+                        <form action="/result" method="get">
+                            <input class="input" type="search" name="content" placeholder="Rechercher" />
+                        </form>
+                    </div>
+                </div>
+                {{if .IsLoggedIn}}
+                <div class="bouton-navbar">
+                    <ul>
+                        <li><a> Compte</a>
+                            <ul>
+                                <li><a href="/deconnexion">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                {{end}}
             </div>
-            {{if .IsLoggedIn}}
-            <div class="bouton-navbar">
-                <ul>
-                    <li><a> Compte</a>
-                        <ul>
-                            <li><a href="/deconnexion">Déconnexion</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            {{end}}
-        </div>
-        <div class="barre-header"></div>
-    </header>
-
-    <h1>Présentation du thème</h1>
-    <p>Pour notre blog, on a choisi le thème des jeux vidéos qu'on a divisé dans les catégories Présentations, Nouveautés et Esport.</p>
-    <h2>Présentations</h2>
-    <p>Dans la catégorie <strong>présentaions</strong>, nous trouvons principalement des présentations de jeux.
-        Les articles de cette section se penchent sur les mécaniques de jeu, les graphismes, l'histoire et d'autres aspects clés, offrant ainsi aux joueurs potentiels un aperçu complet avant de faire leur choix.</p>
-    <h2>Nouveautés</h2>
-    <p>Dans la catégorie <strong>nouveautés</strong>, nous couvrons les dernières actualités, y compris les sorties de jeux tant attendues, les extensions (DLC), les annonces officielles des studios de développement et les mises à jour importantes</p>
-    <h2>Esport</h2>
-    <p>Dans la catégorie <strong>Esport</strong>, nous couvrons toutes les actualités sur les compétitions esport. Nous trouvons aussi des articles sur certaines équipes ou certains évènements marquants de la scène esport.</p>
-
+            <div class="barre-header"></div>
+        </header>
+        <section>
+            <div class="supra">
+                <div class="titre-global-ttt">
+                    <h1>Bienvenue sur Octo-Games - L'univers vibrant du Jeu Vidéo</h1>
+                </div>
+                <div class="elements-global">
+                    <div class="elements-rep">
+                        <div class="contenue-element">
+                            <p> Plongez dans l'univers infini du jeu vidéo avec Octo-Games, votre destination ultime
+                                pour tout ce
+                                qui
+                                concerne le monde du gaming. Que vous soyez un joueur passionné, un amateur curieux ou
+                                un fan
+                                d'e-sport,
+                                notre blog est conçu pour vous tenir informé, divertir et inspirer.</p>
+                        </div>
+                        <div class="titre-global">
+                            <h2>Catégories passionnantes à explorer</h2>
+                        </div>
+                        <div class="contenue-elemen">
+                            <div class="titre">
+                                <h2>Nouveautés Époustouflantes</h2>
+                            </div>
+                            <div class="elements-rep">
+                                <div class="contenue-element">
+                                    <p>Découvrez en avant-première les dernières sorties, les mises à jour et les
+                                        annonces majeures de l'industrie du jeu vidéo. Des critiques approfondies, des
+                                        analyses pointues et des interviews exclusives vous permettront d'être toujours
+                                        à la pointe de l'actualité.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elements-global">
+                            <div class="titre">
+                                <h2>L'Arène de l'E-Sport</h2>
+                            </div>
+                            <div class="elements-rep">
+                                <div class="contenue-element">
+                                    <p>Plongez dans le monde compétitif de l'e-sport où les joueurs deviennent des
+                                        athlètes virtuels. Suivez les derniers tournois, les résultats palpitants et les
+                                        histoires captivantes des équipes et des joueurs qui repoussent les limites de
+                                        la compétition.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elements-global">
+                            <div class="titre">
+                                <h2>Présentation des Jeux</h2>
+                            </div>
+                            <div class="elements-rep">
+                                <div class="contenue-element">
+                                    <p>Explorez en profondeur vos jeux préférés ou découvrez de nouveaux titres qui
+                                        pourraient devenir vos coups de cœur. Des analyses détaillées, des guides
+                                        stratégiques et des rétrospectives nostalgiques vous guideront à travers
+                                        l'univers fascinant des jeux vidéo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
     <footer>
         <div class="footer">
             <div class="Produit-par">
@@ -102,7 +154,8 @@
             </div>
         </div>
     </footer>
-</div>
+    </div>
 </body>
+
 </html>
 {{end}}

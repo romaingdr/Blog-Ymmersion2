@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un article</title>
-    <link href="/static/css/header.css" rel="stylesheet">
-    <link href="/static/css/ajout.css" rel="stylesheet">
+    <link href="http://localhost:8080/static/css/header.css" rel="stylesheet">
+    <link href="http://localhost:8080/static/css/ajout.css" rel="stylesheet">
 </head>
 
 <body>
@@ -61,42 +61,109 @@
             <div class="nom-categorie">
                 <h1 class="nom">Ajouter un article</h1>
             </div>
-            <div>
+            <div class="ajout-global">
                 <form id="ajoute_article" action="http://localhost:8080/submit" method="POST"
                     enctype="multipart/form-data">
-                    <div>
+                    <div class="choix">
                         <label for="categorie">Catégorie :</label>
-                        <select id="categorie" name="categorie">
-                            <option value="Nouveautés">Nouveautés</option>
-                            <option value="Esport">E-sport</option>
-                            <option value="Présentations">Présentation</option>
-                        </select>
+                        <div class="wrapper-dfdf">
+                            <div class="option-ggg">
+                                <input class="input-dsds" type="radio" name="btn" value="option1" checked="">
+                                <div class="btn-gtgt">
+                                    <option for="Nouveautés" class="span-s">Nouveautés</option>
+                                </div>
+                            </div>
+                            <div class="option-ggg">
+                                <input class="input-dsds" type="radio" name="btn" value="option2">
+                                <div class="btn-gtgt">
+                                    <option for="Esport" class="span-s">E-sport</option>
+                                </div>
+                            </div>
+                            <div class="option-ggg">
+                                <input class="input-dsds" type="radio" name="btn" value="option3">
+                                <div class="btn-gtgt">
+                                    <option for="Présentations" class="span-s">Présentation</option>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
+                    <div class="titre">
                         <label for="titre">Titre : </label>
-                        <input type="text" id="titre" name="titre">
+                        <input class="input-titre" placeholder="TITRE" type="text" id="titre" name="titre">
                     </div>
-                    <div>
+                    <div class="intro">
                         <label for="intro">Introduction : </label>
-                        <textarea id="intro" name="intro" rows="4" cols="50"></textarea>
+                        <textarea class="input-intro" placeholder="INTRODUCTION" id="intro" name="intro" rows="4"
+                            cols="50"></textarea>
                     </div>
-                    <div>
+                    <div class="contenu">
                         <label for="contenu">Contenu : </label>
-                        <textarea id="contenu" name="contenu" rows="4" cols="50"></textarea>
+                        <textarea class="input-contenue" placeholder="CONTENUE DE L'ARTICLE" id="contenu" name="contenu"
+                            rows="4" cols="50"></textarea>
                     </div>
-                    <div>
+                    <div class="auteur">
                         <label for="auteur">Auteur : </label>
-                        <input type="text" id="auteur" name="auteur">
+                        <input class="input-auteur" placeholder="AUTEUR" type="text" id="auteur" name="auteur">
                     </div>
 
-                    <div>
-                        <label for="image">Importer une image : </label>
-                        <input type="file" id="image" name="image" accept="image/*">
-                    </div>
-                    <input type="submit" value="Ajouter">
+                    <form class="file-upload-form">
+                        <div class="image">
+                            <label for="image" class="custum-file-upload">
+                                <div class="icon-ss">
+                                    <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z"
+                                                fill=""></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    <span>Click pour télécharger une image</span>
+                                    <input type="file" id="image" name="image" accept="image/*">
+                                </div>
+
+                            </label>
+                        </div>
+                    </form>
+                    <input class="button" type="submit" value="Ajouter">
                 </form>
             </div>
+            <!-- <form id="ajoute_article" action="http://localhost:8080/submit" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="categorie">Catégorie :</label>
+                    <select id="categorie" name="categorie">
+                        <option value="Nouveautés">Nouveautés</option>
+                        <option value="Esport">E-sport</option>
+                        <option value="Présentations">Présentation</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="titre">Titre : </label>
+                    <input type="text" id="titre" name="titre">
+                </div>
+                <div>
+                    <label for="intro">Introduction : </label>
+                    <textarea id="intro" name="intro" rows="4" cols="50"></textarea>
+                </div>
+                <div>
+                    <label for="contenu">Contenu : </label>
+                    <textarea id="contenu" name="contenu" rows="4" cols="50"></textarea>
+                </div>
+                <div>
+                    <label for="auteur">Auteur : </label>
+                    <input type="text" id="auteur" name="auteur">
+                </div>
 
+                <div>
+                    <label for="image">Importer une image : </label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                </div>
+                <input type="submit" value="Ajouter">
+            </form> -->
         </section>
         <footer>
             <div class="footer">
