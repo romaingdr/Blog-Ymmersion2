@@ -172,12 +172,17 @@ func ResultPage(w http.ResponseWriter, r *http.Request) {
 func RecuDatas(w http.ResponseWriter, r *http.Request) {
 	r.ParseMultipartForm(10 << 20)
 
+	fmt.Println("here")
+
 	categorie := r.FormValue("categorie")
 
+	fmt.Println(categorie)
 	titre := r.FormValue("titre")
 	intro := r.FormValue("intro")
 	contenu := r.FormValue("contenu")
 	auteur := r.FormValue("auteur")
+	fmt.Println(titre)
+	fmt.Println(intro)
 
 	file, handler, err := r.FormFile("image")
 	if err != nil {

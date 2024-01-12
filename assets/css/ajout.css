@@ -334,6 +334,7 @@ body {
 .auteur label {
     margin-right: 20px;
 }
+
 .choix {
     display: flex;
     flex-direction: row;
@@ -351,7 +352,7 @@ body {
     --bg-color: #fff;
     --main-color: #323232;
     width: 200px;
-    height: 20px;
+    height: 35px;
     border-radius: 5px;
     border: 2px solid var(--main-color);
     background-color: var(--bg-color);
@@ -361,40 +362,6 @@ body {
     color: var(--font-color);
     padding: 5px 10px;
     outline: none;
-}
-
-.wrapper-dfdf {
-    --font-color-dark: #323232;
-    --font-color-light: #FFF;
-    --bg-color: #fff;
-    --main-color: #323232;
-    position: relative;
-    width: 550px;
-    height: 36px;
-    background-color: var(--bg-color);
-    border: 2px solid var(--main-color);
-    border-radius: 34px;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 4px 4px var(--main-color);
-}
-
-.option-ggg {
-    width: 180px;
-    height: 28px;
-    position: relative;
-    top: 4px;
-    left: 2px;
-}
-
-.input-dsds {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    appearance: none;
-    cursor: pointer;
 }
 
 .btn-gtgt {
@@ -411,10 +378,17 @@ body {
     color: var(--font-color-dark);
 }
 
-.input-dsds:checked + .btn-gtgt {
-    background-color: var(--main-color);
+select {
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 5px 10px;
+    outline: none;
 }
 
-.input-dsds:checked + .btn-gtgt .span-s {
-    color: var(--font-color-light);
+select:focus {
+    border: 2px solid var(--input-focus);
 }

@@ -6,20 +6,6 @@
       "salt": "zOHspaUpajULcfHyjxRERQ==",
       "state": "admin",
       "username": "testuser"
-    },
-    {
-      "email": "kantin.fagn@gmail.com",
-      "password": "kBcdaG3Br4PBvy3Ip_uP7pM8pSv90HNcU5HgExCdSj8=",
-      "salt": "_yq-L6btWmD6-9cTWBsPjQ==",
-      "state": "admin",
-      "username": "kantin"
-    },
-    {
-      "email": "romgoud123@gmail.com",
-      "password": "JwWpWGpWMw4feXbjAps78lS8yLJghsngajrX70lphSY=",
-      "salt": "VXxxDtdXpVxiFz0Vh5NFsQ==",
-      "state": "member",
-      "username": "Romaingdrg"
     }
   ]
 }
